@@ -14,12 +14,12 @@
   <style>
     :root {
       --primary-green: #007a3d;
-      --primary-dark: #072b16;
-      --accent-green: #eef7f0;
-      --card-dark: #121e17;
-      --card-muted: #1c2e23;
-      --text-light: #ffffff;
-      --text-dim: #a3b8ab;
+      --primary-dark: #004d26;
+      --accent-green-light: #f2f9f4;
+      --card-bg: #ffffff;
+      --text-main: #004d26;
+      --text-muted: #4a6353;
+      --border-color: #dbeae0;
       --white: #ffffff;
     }
 
@@ -32,21 +32,21 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: var(--primary-dark);
-      color: var(--text-light);
+      background-color: #ffffff;
+      color: var(--text-main);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* Header & Nav */
+    /* Header */
     header {
-      padding: 18px 20px;
+      padding: 16px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(7, 43, 22, 0.95);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -57,105 +57,121 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: var(--white);
+      color: var(--text-main);
     }
     .brand-logo img {
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: #fff;
+      object-fit: contain;
     }
     .brand-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
       font-weight: 700;
+      color: var(--text-main);
     }
 
     /* Hero Banner */
     .hero-banner {
-      padding: 40px 20px 30px;
+      padding: 40px 20px 25px;
       text-align: center;
-      background: radial-gradient(circle at 50% 30%, #0d4624 0%, #072b16 80%);
+      background: linear-gradient(180deg, var(--accent-green-light) 0%, #ffffff 100%);
     }
     .hero-subtitle {
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: #72cf93;
-      margin-bottom: 10px;
+      color: var(--primary-green);
+      margin-bottom: 8px;
       font-weight: 600;
     }
     .hero-title {
       font-family: 'Playfair Display', serif;
       font-size: 2.8rem;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       line-height: 1;
       margin-bottom: 12px;
+      color: var(--primary-green);
     }
     .hero-tagline {
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      letter-spacing: 0.5px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      letter-spacing: 0.3px;
     }
 
-    /* Bento Grid (Layout a tessere) */
+    /* Bento Grid */
     .grid-container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 15px;
+      padding: 15px 20px 40px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 14px;
       flex: 1;
       width: 100%;
     }
 
     .bento-card {
       position: relative;
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
       cursor: pointer;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 20px 18px;
+      padding: 22px 20px;
       min-height: 175px;
-      background-color: var(--card-dark);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: transform 0.25s ease, border-color 0.25s ease;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 15px rgba(0, 77, 38, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
       background-size: cover;
       background-position: center;
     }
     .bento-card:active {
       transform: scale(0.97);
     }
-    .bento-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(7,43,22,0.2) 0%, rgba(7,43,22,0.92) 85%);
-      z-index: 1;
-    }
 
-    /* Sfondi specifici delle tessere */
+    /* Scheda 01 (Storia con foto vintage) */
     .card-storia {
       background-image: url('foto%20vintage.jpg');
       grid-row: span 2;
       min-height: 360px;
     }
+    .card-storia::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.95) 85%);
+      z-index: 1;
+    }
+
+    /* Schede a sfondi chiari raffinati */
     .card-servizi {
-      background: linear-gradient(135deg, #11361f 0%, #072b16 100%);
+      background: linear-gradient(135deg, #f2f9f4 0%, #e3f3e8 100%);
     }
     .card-orari {
-      background: linear-gradient(135deg, #18482a 0%, #0d381d 100%);
+      background: linear-gradient(135deg, #eaf6ee 0%, #d8eee0 100%);
     }
     .card-contatti {
       grid-column: span 2;
       min-height: 120px;
       background: linear-gradient(135deg, #007a3d 0%, #00562b 100%);
+      color: #ffffff !important;
+      border: none;
+    }
+    .card-contatti .card-number {
+      color: #b7e8c6 !important;
+    }
+    .card-contatti .card-title {
+      color: #ffffff !important;
+    }
+    .card-contatti .card-desc {
+      color: #e3f3e8 !important;
     }
 
     .card-content {
@@ -165,8 +181,8 @@
     .card-number {
       font-size: 0.75rem;
       letter-spacing: 1px;
-      color: #72cf93;
-      font-weight: 600;
+      color: var(--primary-green);
+      font-weight: 700;
       margin-bottom: 4px;
       display: block;
     }
@@ -174,19 +190,21 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.55rem;
       line-height: 1.15;
-      font-weight: 600;
+      font-weight: 700;
+      color: var(--text-main);
     }
     .card-desc {
-      font-size: 0.8rem;
-      color: var(--text-dim);
+      font-size: 0.82rem;
+      color: var(--text-muted);
       margin-top: 4px;
+      line-height: 1.35;
     }
 
-    /* Modal Pop-up (Dettaglio a Scheda Interattiva) */
+    /* Modal Pop-up */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 30, 15, 0.6);
       backdrop-filter: blur(8px);
       z-index: 999;
       display: flex;
@@ -201,7 +219,7 @@
     }
     .modal-sheet {
       background: #ffffff;
-      color: #222222;
+      color: var(--text-main);
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
@@ -218,7 +236,7 @@
     .modal-handle {
       width: 40px;
       height: 4px;
-      background: #ddd;
+      background: #cbe3d3;
       border-radius: 10px;
       margin: -10px auto 20px;
     }
@@ -238,39 +256,44 @@
       height: 36px;
       border-radius: 50%;
       border: none;
-      background: #f0f4f1;
-      color: #333;
-      font-size: 1.1rem;
+      background: var(--accent-green-light);
+      color: var(--primary-green);
+      font-size: 1.2rem;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-weight: bold;
     }
 
-    /* Contenuti interni del modale */
+    /* Dettagli interni Modali */
     .modal-body p {
       font-size: 0.95rem;
       line-height: 1.6;
-      color: #444;
+      color: #334d3c;
       margin-bottom: 15px;
     }
     .service-list-item {
       display: flex;
       gap: 15px;
       padding: 12px 0;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--border-color);
     }
     .service-list-item i {
       font-size: 1.25rem;
       color: var(--primary-green);
       margin-top: 3px;
     }
+    .service-list-item strong {
+      color: var(--text-main);
+    }
     .hours-row {
       display: flex;
       justify-content: space-between;
       padding: 12px 0;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--border-color);
       font-size: 0.95rem;
+      color: #334d3c;
     }
     .hours-row strong {
       color: var(--primary-green);
@@ -315,19 +338,19 @@
     <p class="hero-tagline">Tradizione e innovazione al servizio della tua salute</p>
   </div>
 
-  <!-- Bento Grid Mobile-First -->
+  <!-- Bento Grid -->
   <div class="grid-container">
 
-    <!-- Scheda 01: Chi Siamo (Storia) con foto vintage -->
+    <!-- 01: Origine & Storia -->
     <div class="bento-card card-storia" onclick="openModal('modal-storia')">
       <div class="card-content">
         <span class="card-number">01</span>
         <h2 class="card-title">Origine &amp; Storia</h2>
-        <p class="card-desc">Dal 1886</p>
+        <p class="card-desc">Tradizione galenica dal 1886</p>
       </div>
     </div>
 
-    <!-- Scheda 02: Servizi -->
+    <!-- 02: Servizi -->
     <div class="bento-card card-servizi" onclick="openModal('modal-servizi')">
       <div class="card-content">
         <span class="card-number">02</span>
@@ -336,21 +359,21 @@
       </div>
     </div>
 
-    <!-- Scheda 03: Orari -->
+    <!-- 03: Orari -->
     <div class="bento-card card-orari" onclick="openModal('modal-orari')">
       <div class="card-content">
         <span class="card-number">03</span>
         <h2 class="card-title">Orari</h2>
-        <p class="card-desc">Lun-Ven 8-20 continuato</p>
+        <p class="card-desc">Lun-Ven 8:00 - 20:00 (Continuato)</p>
       </div>
     </div>
 
-    <!-- Scheda 04: Contatti & WhatsApp -->
+    <!-- 04: Contatti & WhatsApp -->
     <div class="bento-card card-contatti" onclick="openModal('modal-contatti')">
       <div class="card-content">
         <span class="card-number">04</span>
-        <h2 class="card-title">Contatti &amp; Prenotazioni</h2>
-        <p class="card-desc">Viale Marconi 8 • Chiama o prenota via WhatsApp</p>
+        <h2 class="card-title">Contatti &amp; WhatsApp</h2>
+        <p class="card-desc">Viale Marconi 8 • Chiama o ordina online</p>
       </div>
     </div>
 
@@ -367,7 +390,7 @@
       <div class="modal-body">
         <img src="foto%20vintage.jpg" style="width: 100%; border-radius: 12px; margin-bottom: 15px;" alt="Farmacia Storica" />
         <p>Fondata nel <strong>1886</strong>, la <strong>Farmacia Stoppato</strong> è un presidio storico del territorio, punto di riferimento per intere generazioni.</p>
-        <p>Uniamo i valori e l'esperienza della tradizione galenica con i più moderni servizi tecnologici e sanitari di prevenzione.</p>
+        <p>Uniamo i valori e l'esperienza dell'antica tradizione farmaceutica con i più avanzati servizi sanitari digitali.</p>
       </div>
     </div>
   </div>
@@ -385,35 +408,35 @@
           <i class="fa-solid fa-heart-pulse"></i>
           <div>
             <strong>Telemedicina</strong>
-            <p>ECG, Holter pressorio e Holter cardiaco con refertazione specialistica immediata.</p>
+            <p>ECG, Holter pressorio e cardiaco con refertazione specialistica rapida.</p>
           </div>
         </div>
         <div class="service-list-item">
           <i class="fa-brands fa-whatsapp"></i>
           <div>
             <strong>Prenotazione Farmaci WhatsApp</strong>
-            <p>Invia le tue ricette al 351 8267441 per preparare i prodotti in anticipo.</p>
+            <p>Invia le ricette al 351 8267441 per il ritiro prioritario.</p>
           </div>
         </div>
         <div class="service-list-item">
           <i class="fa-solid fa-truck-fast"></i>
           <div>
-            <strong>Consegna con Glovo</strong>
-            <p>Ricevi farmaci da banco, dermocosmesi e integratori a casa in tempi rapidi.</p>
+            <strong>Consegna a domicilio Glovo</strong>
+            <p>I tuoi prodotti a casa in poco tempo.</p>
           </div>
         </div>
         <div class="service-list-item">
           <i class="fa-solid fa-spa"></i>
           <div>
-            <strong>Cosmesi &amp; Dermocosmesi</strong>
-            <p>Linee dermatologiche scelte e consulenze dedicate alla pelle.</p>
+            <strong>Dermocosmesi</strong>
+            <p>Consulenze dedicate e linee di qualità per il benessere della cute.</p>
           </div>
         </div>
         <div class="service-list-item">
           <i class="fa-solid fa-gem"></i>
           <div>
             <strong>Foratura Lobi</strong>
-            <p>Esecuzione sterile, veloce e sicura per bambini e adulti.</p>
+            <p>Procedura rapida, sterile e sicura.</p>
           </div>
         </div>
       </div>
@@ -459,8 +482,8 @@
       </div>
       <div class="modal-body">
         <p><i class="fa-solid fa-location-dot" style="color:var(--primary-green)"></i> <strong>Indirizzo:</strong> Viale Marconi 8</p>
-        <p><i class="fa-solid fa-phone" style="color:var(--primary-green)"></i> <strong>Fisso:</strong> 085 63780</p>
-        <p><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> <strong>WhatsApp Prenotazioni:</strong> 351 8267441</p>
+        <p><i class="fa-solid fa-phone" style="color:var(--primary-green)"></i> <strong>Telefono:</strong> 085 63780</p>
+        <p><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> <strong>WhatsApp:</strong> 351 8267441</p>
         
         <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="btn-action btn-action-whatsapp">
           <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
@@ -472,7 +495,6 @@
     </div>
   </div>
 
-  <!-- Script Interattività Schede -->
   <script>
     function openModal(id) {
       document.getElementById(id).classList.add('active');
