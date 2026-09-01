@@ -2,23 +2,24 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Farmacia Stoppato - Dal 1886 al servizio della tua salute</title>
-  
-  <!-- Font & Icone -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Farmacia Stoppato - Dal 1886</title>
+
+  <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
     :root {
       --primary-green: #007a3d;
-      --primary-dark: #00562b;
+      --primary-dark: #072b16;
       --accent-green: #eef7f0;
-      --text-dark: #222222;
-      --text-muted: #555555;
-      --bg-light: #fbfdfb;
+      --card-dark: #121e17;
+      --card-muted: #1c2e23;
+      --text-light: #ffffff;
+      --text-dim: #a3b8ab;
       --white: #ffffff;
     }
 
@@ -26,531 +27,468 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
       font-family: 'Montserrat', sans-serif;
-      color: var(--text-dark);
-      background-color: var(--bg-light);
-      line-height: 1.6;
+      background-color: var(--primary-dark);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--primary-dark);
-    }
-
-    /* Top Bar */
-    .top-bar {
-      background: var(--primary-dark);
-      color: var(--white);
-      font-size: 0.85rem;
-      padding: 8px 5%;
+    /* Header & Nav */
+    header {
+      padding: 18px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .top-bar a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .top-bar a:hover {
-      text-decoration: underline;
-    }
-
-    /* Navbar */
-    nav {
-      background: var(--white);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      background: rgba(7, 43, 22, 0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       position: sticky;
       top: 0;
-      z-index: 1000;
-      padding: 12px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      z-index: 100;
+      backdrop-filter: blur(10px);
     }
-    .logo-container {
+    .brand-logo {
       display: flex;
       align-items: center;
       gap: 12px;
       text-decoration: none;
+      color: var(--white);
     }
-    .logo-img {
-      width: 55px;
-      height: 55px;
+    .brand-logo img {
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      object-fit: cover;
+      background: #fff;
     }
-    .logo-text h2 {
-      font-size: 1.35rem;
-      line-height: 1.1;
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      padding: 40px 20px 30px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 30%, #0d4624 0%, #072b16 80%);
+    }
+    .hero-subtitle {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #72cf93;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .hero-tagline {
+      font-size: 0.9rem;
+      color: var(--text-dim);
       letter-spacing: 0.5px;
     }
-    .logo-text span {
-      font-size: 0.75rem;
-      color: var(--primary-green);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
 
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover {
-      color: var(--primary-green);
-    }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, rgba(238, 247, 240, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
-      padding: 70px 5%;
-      text-align: center;
-      border-bottom: 1px solid #e0ece0;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: var(--primary-green);
-      color: var(--white);
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
-      line-height: 1.2;
-    }
-    .hero p {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      max-width: 650px;
-      margin: 0 auto 30px;
-    }
-    .btn-group {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 26px;
-      border-radius: 50px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-primary {
-      background-color: var(--primary-green);
-      color: var(--white);
-      box-shadow: 0 4px 12px rgba(0, 122, 61, 0.2);
-    }
-    .btn-primary:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-    .btn-whatsapp {
-      background-color: #25d366;
-      color: var(--white);
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
-    }
-    .btn-whatsapp:hover {
-      background-color: #1ebc57;
-      transform: translateY(-2px);
-    }
-
-    /* Container & Titles */
-    .container {
-      max-width: 1150px;
+    /* Bento Grid (Layout a tessere) */
+    .grid-container {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 65px 20px;
-    }
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-    .section-title h2 {
-      font-size: 2.2rem;
-      margin-bottom: 8px;
-    }
-    .section-title p {
-      color: var(--primary-green);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.85rem;
-    }
-
-    /* Chi Siamo */
-    .about-box {
-      background: var(--white);
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
-    }
-    .about-text h3 {
-      font-size: 1.7rem;
-      margin-bottom: 15px;
-    }
-    .about-text p {
-      margin-bottom: 15px;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-    .about-quote {
-      background: var(--accent-green);
-      border-left: 4px solid var(--primary-green);
       padding: 15px;
-      border-radius: 4px;
-      font-style: italic;
-      color: var(--primary-dark);
-    }
-    .about-badge-card {
-      background: linear-gradient(135deg, var(--primary-green), var(--primary-dark));
-      color: var(--white);
-      padding: 40px 20px;
-      border-radius: 12px;
-      text-align: center;
-    }
-    .about-badge-card .year {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.8rem;
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      flex: 1;
+      width: 100%;
     }
 
-    /* Servizi */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+    .bento-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px 18px;
+      min-height: 175px;
+      background-color: var(--card-dark);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      background-size: cover;
+      background-position: center;
     }
-    .service-card {
-      background: var(--white);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-      border: 1px solid #edf2ed;
-      text-align: center;
-      transition: transform 0.2s, border-color 0.2s;
+    .bento-card:active {
+      transform: scale(0.97);
     }
-    .service-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--primary-green);
+    .bento-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7,43,22,0.2) 0%, rgba(7,43,22,0.92) 85%);
+      z-index: 1;
     }
-    .service-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--accent-green);
+
+    /* Sfondi specifici delle tessere */
+    .card-storia {
+      background-image: url('foto%20vintage.jpg');
+      grid-row: span 2;
+      min-height: 360px;
+    }
+    .card-servizi {
+      background: linear-gradient(135deg, #11361f 0%, #072b16 100%);
+    }
+    .card-orari {
+      background: linear-gradient(135deg, #18482a 0%, #0d381d 100%);
+    }
+    .card-contatti {
+      grid-column: span 2;
+      min-height: 120px;
+      background: linear-gradient(135deg, #007a3d 0%, #00562b 100%);
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 2;
+    }
+    .card-number {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      color: #72cf93;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      line-height: 1.15;
+      font-weight: 600;
+    }
+    .card-desc {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    /* Modal Pop-up (Dettaglio a Scheda Interattiva) */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-sheet {
+      background: #ffffff;
+      color: #222222;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 24px 24px 0 0;
+      padding: 30px 24px 40px;
+      max-height: 85vh;
+      overflow-y: auto;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-overlay.active .modal-sheet {
+      transform: translateY(0);
+    }
+    .modal-handle {
+      width: 40px;
+      height: 4px;
+      background: #ddd;
+      border-radius: 10px;
+      margin: -10px auto 20px;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
       color: var(--primary-green);
+    }
+    .close-btn {
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
+      border: none;
+      background: #f0f4f1;
+      color: #333;
+      font-size: 1.1rem;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      margin: 0 auto 20px;
-    }
-    .service-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-    }
-    .service-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
     }
 
-    /* Orari e Contatti */
-    .info-section {
-      background: var(--white);
-      border-top: 1px solid #eef3ee;
-    }
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-    .info-card {
-      background: var(--bg-light);
-      padding: 35px;
-      border-radius: 12px;
-      border: 1px solid #e2ede2;
-    }
-    .info-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--primary-green);
-    }
-    .hours-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .hours-table tr {
-      border-bottom: 1px solid #e5ebe5;
-    }
-    .hours-table tr:last-child {
-      border-bottom: none;
-    }
-    .hours-table td {
-      padding: 12px 0;
+    /* Contenuti interni del modale */
+    .modal-body p {
       font-size: 0.95rem;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 15px;
     }
-    .hours-table td:last-child {
-      text-align: right;
-      font-weight: 600;
-      color: var(--primary-dark);
-    }
-
-    .contact-item {
+    .service-list-item {
       display: flex;
-      align-items: flex-start;
       gap: 15px;
-      margin-bottom: 20px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
     }
-    .contact-item i {
+    .service-list-item i {
       font-size: 1.25rem;
       color: var(--primary-green);
       margin-top: 3px;
     }
-    .contact-item h4 {
-      font-size: 0.95rem;
-      margin-bottom: 2px;
-    }
-    .contact-item p, .contact-item a {
-      color: var(--text-muted);
-      text-decoration: none;
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
       font-size: 0.95rem;
     }
-    .contact-item a:hover {
+    .hours-row strong {
       color: var(--primary-green);
-      text-decoration: underline;
     }
-
-    /* Footer */
-    footer {
-      background: #0f1c14;
-      color: #9ab0a0;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.85rem;
+    .btn-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 12px;
+      font-size: 0.95rem;
     }
-    footer strong {
-      color: var(--white);
+    .btn-action-green {
+      background: var(--primary-green);
+      color: #fff;
     }
-
-    @media (max-width: 800px) {
-      .about-box, .info-grid {
-        grid-template-columns: 1fr;
-      }
-      .nav-links {
-        display: none;
-      }
-      .hero h1 {
-        font-size: 2.1rem;
-      }
+    .btn-action-whatsapp {
+      background: #25d366;
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div>
-      <i class="fa-solid fa-location-dot"></i> Viale Marconi 8 &nbsp;|&nbsp;
-      <i class="fa-solid fa-phone"></i> 085 63780
-    </div>
-    <div>
-      <i class="fa-brands fa-whatsapp"></i> Prenotazioni WhatsApp: <a href="https://wa.me/393518267441" target="_blank">351 8267441</a>
-    </div>
-  </div>
-
-  <!-- Navbar -->
-  <nav>
-    <a href="#" class="logo-container">
-     <img src="logo%20farmacia.png" alt="Logo Farmacia Stoppato" class="logo-img" />
-        <h2>FARMACIA STOPPATO</h2>
-        <span>Attività Storica dal 1886</span>
-      </div>
+  <!-- Header -->
+  <header>
+    <a href="#" class="brand-logo">
+      <img src="logo%20farmacia.png" alt="Logo" onerror="this.style.display='none'" />
+      <span class="brand-name">Farmacia Stoppato</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#storia">Chi Siamo</a></li>
-      <li><a href="#servizi">Servizi</a></li>
-      <li><a href="#orari">Orari</a></li>
-      <li><a href="#contatti">Contatti</a></li>
-    </ul>
-  </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <span class="hero-badge"><i class="fa-solid fa-certificate"></i> Attività Storica dal 1886</span>
-    <h1>La tua salute al centro,<br>da oltre un secolo.</h1>
-    <p>Professionalità, tradizione e servizi avanzati per il benessere e la cura di tutta la famiglia.</p>
-    <div class="btn-group">
-      <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="btn btn-whatsapp">
-        <i class="fa-brands fa-whatsapp"></i> Prenota su WhatsApp
-      </a>
-      <a href="tel:08563780" class="btn btn-primary">
-        <i class="fa-solid fa-phone"></i> Chiama 085 63780
-      </a>
-    </div>
-  </section>
+  <!-- Hero Sezione -->
+  <div class="hero-banner">
+    <div class="hero-subtitle">Attività Storica dal 1886</div>
+    <h1 class="hero-title">STOPPATO</h1>
+    <p class="hero-tagline">Tradizione e innovazione al servizio della tua salute</p>
+  </div>
 
-  <!-- Chi Siamo -->
-  <div id="storia" style="background-color: #f4faf5;">
-    <div class="container">
-      <div class="section-title">
-        <p>Tradizione e dedizione</p>
-        <h2>Chi Siamo</h2>
+  <!-- Bento Grid Mobile-First -->
+  <div class="grid-container">
+
+    <!-- Scheda 01: Chi Siamo (Storia) con foto vintage -->
+    <div class="bento-card card-storia" onclick="openModal('modal-storia')">
+      <div class="card-content">
+        <span class="card-number">01</span>
+        <h2 class="card-title">Origine &amp; Storia</h2>
+        <p class="card-desc">Dal 1886</p>
       </div>
-      <div class="about-box">
-        <div class="about-text">
-          <h3>Un punto di riferimento per la tua salute</h3>
-          <p>La <strong>Farmacia Stoppato</strong> è un'attività storica presente sul territorio fin dal <strong>1886</strong>.</p>
-          <p>Da oltre un secolo ci dedichiamo alla salute dei nostri cittadini, unendo la competenza dell'antica tradizione farmaceutica ai più moderni servizi diagnostici e digitali.</p>
-          <div class="about-quote">
-            "Esperienza, ascolto e innovazione al servizio quotidiano del cittadino."
+    </div>
+
+    <!-- Scheda 02: Servizi -->
+    <div class="bento-card card-servizi" onclick="openModal('modal-servizi')">
+      <div class="card-content">
+        <span class="card-number">02</span>
+        <h2 class="card-title">Servizi</h2>
+        <p class="card-desc">Telemedicina, Glovo, Cosmesi</p>
+      </div>
+    </div>
+
+    <!-- Scheda 03: Orari -->
+    <div class="bento-card card-orari" onclick="openModal('modal-orari')">
+      <div class="card-content">
+        <span class="card-number">03</span>
+        <h2 class="card-title">Orari</h2>
+        <p class="card-desc">Lun-Ven 8-20 continuato</p>
+      </div>
+    </div>
+
+    <!-- Scheda 04: Contatti & WhatsApp -->
+    <div class="bento-card card-contatti" onclick="openModal('modal-contatti')">
+      <div class="card-content">
+        <span class="card-number">04</span>
+        <h2 class="card-title">Contatti &amp; Prenotazioni</h2>
+        <p class="card-desc">Viale Marconi 8 • Chiama o prenota via WhatsApp</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MODAL: 01 STORIA -->
+  <div id="modal-storia" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <h2 class="modal-title">Chi Siamo</h2>
+        <button class="close-btn" onclick="closeModal('modal-storia')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="foto%20vintage.jpg" style="width: 100%; border-radius: 12px; margin-bottom: 15px;" alt="Farmacia Storica" />
+        <p>Fondata nel <strong>1886</strong>, la <strong>Farmacia Stoppato</strong> è un presidio storico del territorio, punto di riferimento per intere generazioni.</p>
+        <p>Uniamo i valori e l'esperienza della tradizione galenica con i più moderni servizi tecnologici e sanitari di prevenzione.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: 02 SERVIZI -->
+  <div id="modal-servizi" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <h2 class="modal-title">I Nostri Servizi</h2>
+        <button class="close-btn" onclick="closeModal('modal-servizi')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="service-list-item">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <div>
+            <strong>Telemedicina</strong>
+            <p>ECG, Holter pressorio e Holter cardiaco con refertazione specialistica immediata.</p>
           </div>
         </div>
-      <div style="width: 100%; height: 100%; min-height: 280px; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.12);">
- <div style="width: 100%; display: flex; align-items: center; justify-content: center;">
-  <img src="foto%20vintage.jpg" alt="Farmacia Stoppato Storica" style="width: 100%; max-width: 540px; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); display: block;" />
-</div>
+        <div class="service-list-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <div>
+            <strong>Prenotazione Farmaci WhatsApp</strong>
+            <p>Invia le tue ricette al 351 8267441 per preparare i prodotti in anticipo.</p>
+          </div>
+        </div>
+        <div class="service-list-item">
+          <i class="fa-solid fa-truck-fast"></i>
+          <div>
+            <strong>Consegna con Glovo</strong>
+            <p>Ricevi farmaci da banco, dermocosmesi e integratori a casa in tempi rapidi.</p>
+          </div>
+        </div>
+        <div class="service-list-item">
+          <i class="fa-solid fa-spa"></i>
+          <div>
+            <strong>Cosmesi &amp; Dermocosmesi</strong>
+            <p>Linee dermatologiche scelte e consulenze dedicate alla pelle.</p>
+          </div>
+        </div>
+        <div class="service-list-item">
+          <i class="fa-solid fa-gem"></i>
+          <div>
+            <strong>Foratura Lobi</strong>
+            <p>Esecuzione sterile, veloce e sicura per bambini e adulti.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Servizi -->
-  <div id="servizi" class="container">
-    <div class="section-title">
-      <p>Assistenza e Cura</p>
-      <h2>I Nostri Servizi</h2>
-    </div>
-    <div class="services-grid">
-      
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-        <h3>Telemedicina</h3>
-        <p>Elettrocardiogramma (ECG), Holter pressorio e Holter cardiaco eseguiti in sede con refertazione specialistica rapida.</p>
+  <!-- MODAL: 03 ORARI -->
+  <div id="modal-orari" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <h2 class="modal-title">Orari di Apertura</h2>
+        <button class="close-btn" onclick="closeModal('modal-orari')">&times;</button>
       </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-brands fa-whatsapp"></i></div>
-        <h3>Prenotazione WhatsApp</h3>
-        <p>Invia le tue ricette o richiedi la disponibilità di farmaci e prodotti comodamente via messaggio al <strong>351 8267441</strong>.</p>
+      <div class="modal-body">
+        <div class="hours-row">
+          <span>Lunedì – Venerdì</span>
+          <strong>08:00 – 20:00 (Continuato)</strong>
+        </div>
+        <div class="hours-row">
+          <span>Sabato Mattina</span>
+          <strong>08:30 – 13:00</strong>
+        </div>
+        <div class="hours-row">
+          <span>Sabato Pomeriggio</span>
+          <strong>16:00 – 19:30</strong>
+        </div>
+        <div class="hours-row">
+          <span>Domenica</span>
+          <strong>Chiuso (salvo turni)</strong>
+        </div>
       </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-truck-fast"></i></div>
-        <h3>Consegna con Glovo</h3>
-        <p>Ordina farmaci da banco, integratori e articoli sanitari con consegna rapida a domicilio tramite Glovo.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-spa"></i></div>
-        <h3>Cosmesi & Dermocosmesi</h3>
-        <p>Trattamenti selezionati, dermocosmesi avanzata e consulenze personalizzate per la cura della pelle.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-gem"></i></div>
-        <h3>Foratura Lobi</h3>
-        <p>Applicazione orecchini con dispositivi sterili, sicuri e indolori per adulti e bambini.</p>
-      </div>
-
     </div>
   </div>
 
-  <!-- Orari & Contatti -->
-  <div class="info-section">
-    <div class="container">
-      <div class="info-grid">
+  <!-- MODAL: 04 CONTATTI -->
+  <div id="modal-contatti" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <h2 class="modal-title">Contatti &amp; Posizione</h2>
+        <button class="close-btn" onclick="closeModal('modal-contatti')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><i class="fa-solid fa-location-dot" style="color:var(--primary-green)"></i> <strong>Indirizzo:</strong> Viale Marconi 8</p>
+        <p><i class="fa-solid fa-phone" style="color:var(--primary-green)"></i> <strong>Fisso:</strong> 085 63780</p>
+        <p><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> <strong>WhatsApp Prenotazioni:</strong> 351 8267441</p>
         
-        <!-- Orari -->
-        <div class="info-card" id="orari">
-          <h3><i class="fa-regular fa-clock"></i> I Nostri Orari</h3>
-          <table class="hours-table">
-            <tr>
-              <td>Lunedì – Venerdì</td>
-              <td>08:00 – 20:00 (Continuato)</td>
-            </tr>
-            <tr>
-              <td>Sabato</td>
-              <td>08:30 – 13:00<br>16:00 – 19:30</td>
-            </tr>
-            <tr>
-              <td>Domenica</td>
-              <td>Chiuso (salvo turni)</td>
-            </tr>
-          </table>
-        </div>
-
-        <!-- Contatti -->
-        <div class="info-card" id="contatti">
-          <h3><i class="fa-solid fa-address-book"></i> Contatti</h3>
-          
-          <div class="contact-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>
-              <h4>Indirizzo</h4>
-              <p>Viale Marconi 8</p>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <i class="fa-solid fa-phone"></i>
-            <div>
-              <h4>Telefono</h4>
-              <p><a href="tel:08563780">085 63780</a></p>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <i class="fa-brands fa-whatsapp"></i>
-            <div>
-              <h4>Cellulare Prenotazioni</h4>
-              <p><a href="https://wa.me/393518267441" target="_blank">351 8267441 (WhatsApp)</a></p>
-            </div>
-          </div>
-
-        </div>
-
+        <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="btn-action btn-action-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
+        </a>
+        <a href="tel:08563780" class="btn-action btn-action-green">
+          <i class="fa-solid fa-phone"></i> Chiama in Farmacia
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <p><strong>Farmacia Stoppato</strong> &copy; Attività Storica dal 1886 | Viale Marconi 8 | Tel. 085 63780</p>
-    <p>Tutti i diritti riservati.</p>
-  </footer>
+  <!-- Script Interattività Schede -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function closeModalOnOverlay(e, overlay) {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
 
 </body>
 </html>
