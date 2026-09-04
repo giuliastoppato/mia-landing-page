@@ -41,11 +41,11 @@
 
     /* Header */
     header {
-      padding: 16px 20px;
+      padding: 18px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.98);
       border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
@@ -55,33 +55,140 @@
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       text-decoration: none;
       color: var(--text-main);
     }
     .brand-logo img {
-      width: 42px;
-      height: 42px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       object-fit: contain;
     }
     .brand-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
+      font-size: 1.6rem;
       letter-spacing: 1px;
       text-transform: uppercase;
       font-weight: 700;
       color: var(--text-main);
     }
 
+    /* Tasto Menu Hamburger */
+    .menu-toggle-btn {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--primary-green);
+      cursor: pointer;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+    .menu-toggle-btn:active {
+      transform: scale(0.92);
+    }
+
+    /* Menu a tendina laterale (Drawer Verde) */
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 30, 15, 0.45);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 82%;
+      max-width: 320px;
+      height: 100vh;
+      background: linear-gradient(180deg, #007a3d 0%, #004d26 100%);
+      color: #ffffff;
+      z-index: 210;
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.25);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .drawer-overlay.active .side-menu {
+      transform: translateX(0);
+    }
+    .side-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      margin-bottom: 24px;
+    }
+    .side-menu-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+    }
+    .side-menu-close {
+      background: rgba(255, 255, 255, 0.12);
+      border: none;
+      color: #ffffff;
+      font-size: 1.3rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .side-menu-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .side-menu-nav a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .side-menu-nav a i {
+      width: 20px;
+      color: #a3f1c1;
+    }
+    .side-menu-nav a:hover, .side-menu-nav a:active {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(4px);
+    }
+
     /* Hero Banner */
     .hero-banner {
-      padding: 40px 20px 25px;
+      padding: 35px 20px 20px;
       text-align: center;
       background: linear-gradient(180deg, var(--accent-green-light) 0%, #ffffff 100%);
     }
     .hero-subtitle {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 3px;
       color: var(--primary-green);
@@ -90,24 +197,48 @@
     }
     .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      letter-spacing: 2px;
+      font-size: 2.6rem;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      line-height: 1;
+      line-height: 1.1;
       margin-bottom: 12px;
       color: var(--primary-green);
     }
     .hero-tagline {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: var(--text-muted);
       letter-spacing: 0.3px;
+    }
+
+    /* Immagine di Copertina Team */
+    .team-cover-container {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      padding: 0 20px;
+      width: 100%;
+    }
+    .team-cover-box {
+      position: relative;
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 77, 38, 0.08);
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+    }
+    .team-cover-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      object-position: 50% 15%;
+      display: block;
     }
 
     /* Bento Grid */
     .grid-container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 15px 20px 40px;
+      padding: 10px 20px 40px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
@@ -136,7 +267,6 @@
       transform: scale(0.97);
     }
 
-    /* Scheda 01 (Storia con foto vintage) */
     .card-storia {
       background-image: url('foto%20vintage.jpg');
       grid-row: span 2;
@@ -150,7 +280,6 @@
       z-index: 1;
     }
 
-    /* Schede a sfondi chiari raffinati */
     .card-servizi {
       background: linear-gradient(135deg, #f2f9f4 0%, #e3f3e8 100%);
     }
@@ -266,7 +395,6 @@
       font-weight: bold;
     }
 
-    /* Dettagli interni Modali */
     .modal-body p {
       font-size: 0.95rem;
       line-height: 1.6;
@@ -329,16 +457,62 @@
       <img src="logo%20farmacia.png" alt="Logo" onerror="this.style.display='none'" />
       <span class="brand-name">Farmacia Stoppato</span>
     </a>
+    <button class="menu-toggle-btn" onclick="toggleDrawer(true)" aria-label="Apri Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </header>
+
+  <!-- Menu a Tendina Laterale (Drawer Verde) -->
+  <div id="drawer" class="drawer-overlay" onclick="closeDrawerOnOverlay(event, this)">
+    <div class="side-menu">
+      <div class="side-menu-header">
+        <span class="side-menu-title">Menu Navigazione</span>
+        <button class="side-menu-close" onclick="toggleDrawer(false)">&times;</button>
+      </div>
+      <ul class="side-menu-nav">
+        <li>
+          <a href="#" onclick="toggleDrawer(false); window.scrollTo({top: 0, behavior: 'smooth'});">
+            <i class="fa-solid fa-house"></i> Home
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="goToSection('modal-storia')">
+            <i class="fa-solid fa-landmark"></i> Origine &amp; Storia
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="goToSection('modal-servizi')">
+            <i class="fa-solid fa-stethoscope"></i> I Nostri Servizi
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="goToSection('modal-orari')">
+            <i class="fa-solid fa-clock"></i> Orari di Apertura
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="goToSection('modal-contatti')">
+            <i class="fa-solid fa-location-dot"></i> Contatti &amp; Posizione
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <!-- Hero Sezione -->
   <div class="hero-banner">
     <div class="hero-subtitle">Attività Storica dal 1886</div>
-    <h1 class="hero-title">STOPPATO</h1>
+    <h1 class="hero-title">FARMACIA STOPPATO</h1>
     <p class="hero-tagline">Tradizione e innovazione al servizio della tua salute</p>
   </div>
 
+  <!-- Immagine di copertina Team -->
+  <div class="team-cover-container">
+    <div class="team-cover-box">
+      <img src="foto%20team.png" alt="Team Farmacia Stoppato" class="team-cover-img" />
+    </div>
   </div>
+
   <!-- Bento Grid -->
   <div class="grid-container">
 
@@ -497,6 +671,7 @@
   </div>
 
   <script>
+    // Gestione Modali
     function openModal(id) {
       document.getElementById(id).classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -510,6 +685,29 @@
         overlay.classList.remove('active');
         document.body.style.overflow = '';
       }
+    }
+
+    // Gestione Drawer Menu Laterale
+    function toggleDrawer(open) {
+      const drawer = document.getElementById('drawer');
+      if (open) {
+        drawer.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        drawer.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+    function closeDrawerOnOverlay(e, overlay) {
+      if (e.target === overlay) {
+        toggleDrawer(false);
+      }
+    }
+    function goToSection(modalId) {
+      toggleDrawer(false);
+      setTimeout(() => {
+        openModal(modalId);
+      }, 250);
     }
   </script>
 
