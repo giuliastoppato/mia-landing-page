@@ -22,6 +22,7 @@
       --border-color: #dbeae0;
       --white: #ffffff;
       --gold-star: #f59e0b;
+      --wa-color: #25d366;
     }
 
     * {
@@ -173,7 +174,7 @@
 
     /* Hero Banner */
     .hero-banner {
-      padding: 30px 20px 20px;
+      padding: 35px 20px 25px;
       text-align: center;
       background: linear-gradient(180deg, var(--accent-green-light) 0%, #ffffff 100%);
       display: flex;
@@ -181,14 +182,15 @@
       align-items: center;
     }
     .hero-brand-logo {
-      width: 105px;
-      height: 105px;
+      width: 135px;
+      height: 135px;
       object-fit: contain;
-      margin-bottom: 16px;
-      filter: drop-shadow(0 4px 10px rgba(0, 77, 38, 0.08));
+      margin-bottom: 18px;
+      background: transparent;
+      mix-blend-mode: multiply; /* Rende trasparente ogni alone bianco residuo */
     }
     .hero-subtitle {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 3px;
       color: var(--primary-green);
@@ -208,7 +210,42 @@
       font-size: 0.95rem;
       color: var(--text-muted);
       letter-spacing: 0.3px;
-      max-width: 500px;
+      max-width: 520px;
+      line-height: 1.45;
+    }
+
+    /* Pulsante WhatsApp in grande distaccato */
+    .hero-wa-container {
+      margin-top: 24px;
+      width: 100%;
+      max-width: 440px;
+      padding: 0 16px;
+    }
+    .hero-wa-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #25d366 0%, #1eb857 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 16px 24px;
+      border-radius: 50px;
+      box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      letter-spacing: 0.3px;
+    }
+    .hero-wa-btn i {
+      font-size: 1.5rem;
+    }
+    .hero-wa-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45);
+    }
+    .hero-wa-btn:active {
+      transform: scale(0.98);
     }
 
     /* Bento Grid */
@@ -249,7 +286,6 @@
       background: linear-gradient(135deg, #007a3d 0%, #00562b 100%);
       color: #ffffff !important;
       border: none;
-      justify-content: space-between;
     }
     .card-contatti .card-number {
       color: #b7e8c6 !important;
@@ -259,28 +295,6 @@
     }
     .card-contatti .card-desc {
       color: #e3f3e8 !important;
-    }
-
-    /* Pop-up WhatsApp in rilievo sopra Contatti */
-    .wa-pill-badge {
-      align-self: flex-start;
-      background: #25d366;
-      color: #ffffff;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
-      text-decoration: none;
-      transition: transform 0.2s ease, background-color 0.2s ease;
-      z-index: 3;
-    }
-    .wa-pill-badge:hover {
-      background: #20ba5a;
-      transform: translateY(-2px);
     }
 
     .card-orari {
@@ -550,7 +564,7 @@
         </li>
         <li>
           <a href="javascript:void(0)" onclick="goToSection('modal-contatti')">
-            <i class="fa-solid fa-phone"></i> Contatti &amp; WhatsApp
+            <i class="fa-solid fa-phone"></i> Contatti &amp; Info
           </a>
         </li>
         <li>
@@ -582,26 +596,30 @@
     </div>
   </div>
 
-  <!-- Hero Sezione con Logo Centrale -->
+  <!-- Hero Sezione con Logo Centrale e Tasto WhatsApp Separato -->
   <div class="hero-banner">
     <img src="logo%20farmacia.png" alt="Logo Farmacia Stoppato" class="hero-brand-logo" onerror="this.style.display='none'" />
     <div class="hero-subtitle">Attività Storica dal 1886</div>
     <h1 class="hero-title">FARMACIA STOPPATO</h1>
     <p class="hero-tagline">Tradizione e innovazione al servizio della tua salute</p>
+
+    <!-- Tasto WhatsApp Distaccato in Grande -->
+    <div class="hero-wa-container">
+      <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="hero-wa-btn">
+        <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
+      </a>
+    </div>
   </div>
 
   <!-- Bento Grid -->
   <div class="grid-container">
 
-    <!-- 01: CONTATTI (con badge diretto WhatsApp in alto) -->
+    <!-- 01: CONTATTI -->
     <div class="bento-card card-contatti" onclick="openModal('modal-contatti')">
-      <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="wa-pill-badge" onclick="event.stopPropagation()">
-        <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
-      </a>
       <div class="card-content">
         <span class="card-number">01</span>
         <h2 class="card-title">Contatti</h2>
-        <p class="card-desc">085 63780 • Prenotazioni &amp; Info</p>
+        <p class="card-desc">085 63780 • Chiama in Farmacia</p>
       </div>
     </div>
 
@@ -669,11 +687,11 @@
         <p><i class="fa-solid fa-phone" style="color:var(--primary-green)"></i> <strong>Telefono Fisso:</strong> 085 63780</p>
         <p><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> <strong>WhatsApp Farmaci:</strong> 351 8267441</p>
         
-        <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="btn-action btn-action-whatsapp">
-          <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
-        </a>
         <a href="tel:08563780" class="btn-action btn-action-green">
           <i class="fa-solid fa-phone"></i> Chiama in Farmacia
+        </a>
+        <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="btn-action btn-action-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
         </a>
       </div>
     </div>
