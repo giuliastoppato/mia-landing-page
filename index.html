@@ -21,6 +21,7 @@
       --text-muted: #4a6353;
       --border-color: #dbeae0;
       --white: #ffffff;
+      --gold-star: #f59e0b;
     }
 
     * {
@@ -74,7 +75,7 @@
       color: var(--text-main);
     }
 
-    /* Tasto Menu Hamburger */
+    /* Tasto Hamburger */
     .menu-toggle-btn {
       background: none;
       border: none;
@@ -91,7 +92,7 @@
       transform: scale(0.92);
     }
 
-    /* Menu a tendina laterale (Drawer Verde) */
+    /* Drawer Laterale Verde */
     .drawer-overlay {
       position: fixed;
       inset: 0;
@@ -122,6 +123,7 @@
       flex-direction: column;
       transform: translateX(100%);
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow-y: auto;
     }
     .drawer-overlay.active .side-menu {
       transform: translateX(0);
@@ -130,9 +132,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 20px;
+      padding-bottom: 18px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     .side-menu-title {
       font-family: 'Playfair Display', serif;
@@ -157,17 +159,17 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
     .side-menu-nav a {
       display: flex;
       align-items: center;
       gap: 14px;
-      padding: 14px 16px;
+      padding: 13px 15px;
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
-      font-size: 1.05rem;
+      font-size: 1rem;
       border-radius: 12px;
       background: rgba(255, 255, 255, 0.08);
       transition: background 0.2s ease, transform 0.2s ease;
@@ -197,7 +199,7 @@
     }
     .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
+      font-size: 2.5rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       line-height: 1.1;
@@ -243,6 +245,7 @@
       transform: scale(0.97);
     }
 
+    /* Schede specifiche */
     .card-storia {
       background-image: url('foto%20vintage.jpg');
       grid-row: span 2;
@@ -262,9 +265,8 @@
     .card-orari {
       background: linear-gradient(135deg, #eaf6ee 0%, #d8eee0 100%);
     }
+    
     .card-contatti {
-      grid-column: span 2;
-      min-height: 120px;
       background: linear-gradient(135deg, #007a3d 0%, #00562b 100%);
       color: #ffffff !important;
       border: none;
@@ -277,6 +279,17 @@
     }
     .card-contatti .card-desc {
       color: #e3f3e8 !important;
+    }
+
+    .card-posizione {
+      background: linear-gradient(135deg, #ffffff 0%, #f6faf7 100%);
+    }
+
+    .card-recensioni {
+      grid-column: span 2;
+      min-height: 120px;
+      background: #ffffff;
+      border: 1px solid #d2e7d8;
     }
 
     .card-content {
@@ -303,6 +316,35 @@
       color: var(--text-muted);
       margin-top: 4px;
       line-height: 1.35;
+    }
+
+    /* Rating stars badge */
+    .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .rating-score {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #202124;
+    }
+    .stars {
+      color: var(--gold-star);
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+    .google-pill {
+      font-size: 0.75rem;
+      background: #f1f3f4;
+      color: #5f6368;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
 
     /* Modal Pop-up */
@@ -414,6 +456,7 @@
       font-weight: 600;
       margin-top: 12px;
       font-size: 0.95rem;
+      cursor: pointer;
     }
     .btn-action-green {
       background: var(--primary-green);
@@ -422,6 +465,46 @@
     .btn-action-whatsapp {
       background: #25d366;
       color: #fff;
+    }
+    .btn-action-maps {
+      background: #1a73e8;
+      color: #fff;
+    }
+    .btn-action-outline {
+      background: #ffffff;
+      color: #1a73e8;
+      border: 1.5px solid #1a73e8;
+    }
+
+    /* Mappa embed */
+    .map-frame-box {
+      width: 100%;
+      height: 240px;
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 15px 0 10px;
+      border: 1px solid var(--border-color);
+    }
+    .map-frame-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Recensioni card styling */
+    .review-quote-box {
+      background: var(--accent-green-light);
+      border-left: 4px solid var(--primary-green);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 12px 0;
+    }
+    .review-author {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-top: 6px;
+      display: block;
     }
   </style>
 </head>
@@ -468,7 +551,17 @@
         </li>
         <li>
           <a href="javascript:void(0)" onclick="goToSection('modal-contatti')">
-            <i class="fa-solid fa-location-dot"></i> Contatti &amp; Posizione
+            <i class="fa-solid fa-phone"></i> Contatti &amp; WhatsApp
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="goToSection('modal-posizione')">
+            <i class="fa-solid fa-map-location-dot"></i> Dove Siamo (Mappa)
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="goToSection('modal-recensioni')">
+            <i class="fa-solid fa-star"></i> Recensioni Google (4.7)
           </a>
         </li>
       </ul>
@@ -512,12 +605,35 @@
       </div>
     </div>
 
-    <!-- 04: Contatti & WhatsApp -->
+    <!-- 04: Contatti -->
     <div class="bento-card card-contatti" onclick="openModal('modal-contatti')">
       <div class="card-content">
         <span class="card-number">04</span>
         <h2 class="card-title">Contatti &amp; WhatsApp</h2>
-        <p class="card-desc">Viale Marconi 8 • Chiama o ordina online</p>
+        <p class="card-desc">085 63780 • Prenota al 351 8267441</p>
+      </div>
+    </div>
+
+    <!-- 05: Posizione -->
+    <div class="bento-card card-posizione" onclick="openModal('modal-posizione')">
+      <div class="card-content">
+        <span class="card-number">05</span>
+        <h2 class="card-title">Dove Siamo</h2>
+        <p class="card-desc">Viale G. Marconi 8, Pescara • Indicazioni stradali</p>
+      </div>
+    </div>
+
+    <!-- 06: Recensioni Google -->
+    <div class="bento-card card-recensioni" onclick="openModal('modal-recensioni')">
+      <div class="card-content">
+        <span class="card-number">06</span>
+        <div class="rating-badge">
+          <span class="rating-score">4.7</span>
+          <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+          <span class="google-pill"><i class="fa-brands fa-google"></i> Google</span>
+        </div>
+        <h2 class="card-title">Valutazione dei Pazienti</h2>
+        <p class="card-desc">Oltre 4.7 stelle di media per disponibilità, puntualità e professionalità.</p>
       </div>
     </div>
 
@@ -534,7 +650,7 @@
       <div class="modal-body">
         <img src="foto%20vintage.jpg" style="width: 100%; border-radius: 12px; margin-bottom: 15px;" alt="Farmacia Storica" />
         <p>Fondata nel <strong>1886</strong>, la <strong>Farmacia Stoppato</strong> è un presidio storico del territorio, punto di riferimento per intere generazioni.</p>
-        <p>Uniamo i valori e l'esperienza dell'antica tradizione farmaceutica con i più avanzati servizi sanitari digitali.</p>
+        <p>Uniamo i valori e l'esperienza dell'antica tradizione galenica con i più avanzati servizi sanitari digitali.</p>
       </div>
     </div>
   </div>
@@ -621,19 +737,83 @@
     <div class="modal-sheet">
       <div class="modal-handle"></div>
       <div class="modal-header">
-        <h2 class="modal-title">Contatti &amp; Posizione</h2>
+        <h2 class="modal-title">Contatti Diretti</h2>
         <button class="close-btn" onclick="closeModal('modal-contatti')">&times;</button>
       </div>
       <div class="modal-body">
-        <p><i class="fa-solid fa-location-dot" style="color:var(--primary-green)"></i> <strong>Indirizzo:</strong> Viale Marconi 8</p>
-        <p><i class="fa-solid fa-phone" style="color:var(--primary-green)"></i> <strong>Telefono:</strong> 085 63780</p>
-        <p><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> <strong>WhatsApp:</strong> 351 8267441</p>
+        <p><i class="fa-solid fa-phone" style="color:var(--primary-green)"></i> <strong>Telefono Fisso:</strong> 085 63780</p>
+        <p><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> <strong>WhatsApp Farmaci:</strong> 351 8267441</p>
         
         <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="btn-action btn-action-whatsapp">
           <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
         </a>
         <a href="tel:08563780" class="btn-action btn-action-green">
           <i class="fa-solid fa-phone"></i> Chiama in Farmacia
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: 05 POSIZIONE & MAPPA -->
+  <div id="modal-posizione" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <h2 class="modal-title">Dove Trovarci</h2>
+        <button class="close-btn" onclick="closeModal('modal-posizione')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><i class="fa-solid fa-location-dot" style="color:var(--primary-green)"></i> <strong>Indirizzo:</strong> Viale Guglielmo Marconi 8, 65127 Pescara (PE)</p>
+        
+        <!-- Banner Mappa Interattivo -->
+        <div class="map-frame-box">
+          <iframe 
+            src="https://maps.google.com/maps?q=Farmacia+Stoppato+Viale+Marconi+8+Pescara&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+            loading="lazy" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <a href="https://maps.google.com/?q=Farmacia+Stoppato+Viale+Marconi+8+Pescara" target="_blank" class="btn-action btn-action-maps">
+          <i class="fa-solid fa-diamond-turn-right"></i> Apri su Google Maps &amp; Naviga
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: 06 RECENSIONI GOOGLE -->
+  <div id="modal-recensioni" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <h2 class="modal-title">Recensioni Google</h2>
+        <button class="close-btn" onclick="closeModal('modal-recensioni')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="text-align: center; padding: 15px 0 20px;">
+          <div style="font-size: 3rem; font-weight: 700; color: #202124; line-height: 1;">4.7</div>
+          <div style="color: var(--gold-star); font-size: 1.25rem; margin: 8px 0;">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0;">Valutazione media basata sulle recensioni verificate dei clienti</p>
+        </div>
+
+        <div class="review-quote-box">
+          <p style="margin: 0; font-style: italic;">“Personale sempre gentile, preparato e disponibile per ogni consiglio. Il servizio di prenotazione ricette è comodissimo.”</p>
+          <span class="review-author">★★★★★ – Paziente Verificato</span>
+        </div>
+
+        <div class="review-quote-box">
+          <p style="margin: 0; font-style: italic;">“Farmacia storica ben fornita, orario continuato molto utile per chi lavora e massima cortesia.”</p>
+          <span class="review-author">★★★★★ – Paziente Verificato</span>
+        </div>
+
+        <a href="https://www.google.com/search?q=Farmacia+Stoppato+Pescara+recensioni" target="_blank" class="btn-action btn-action-maps">
+          <i class="fa-brands fa-google"></i> Leggi tutte le recensioni su Google
         </a>
       </div>
     </div>
