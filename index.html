@@ -241,116 +241,14 @@
       box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45);
     }
 
-    /* Carosello Servizi Orizzontale */
-    .services-carousel-section {
-      width: 100%;
-      max-width: 900px;
-      margin: 30px auto 10px;
-      padding: 0 20px;
-      position: relative;
-    }
-    .carousel-section-title {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
-      color: var(--primary-green);
-      margin-bottom: 14px;
-      text-align: center;
-    }
-    .carousel-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-    .carousel-track {
-      display: flex;
-      gap: 14px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 10px 4px 18px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--primary-green) #e2eee6;
-      -webkit-overflow-scrolling: touch;
-    }
-    .carousel-track::-webkit-scrollbar {
-      height: 6px;
-    }
-    .carousel-track::-webkit-scrollbar-thumb {
-      background: #9eccad;
-      border-radius: 10px;
-    }
-    .service-bubble-card {
-      flex: 0 0 145px;
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 12px 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 77, 38, 0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-    .service-bubble-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--primary-green);
-      box-shadow: 0 6px 18px rgba(0, 77, 38, 0.12);
-    }
-    .service-thumb-box {
-      width: 78px;
-      height: 78px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-bottom: 10px;
-      border: 2px solid #e1efe5;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .service-thumb-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .service-bubble-card span {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-main);
-      line-height: 1.25;
-    }
-
-    .carousel-nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.95);
-      border: 1px solid var(--border-color);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-      color: var(--primary-green);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 5;
-    }
-    .carousel-nav-left { left: 4px; }
-    .carousel-nav-right { right: 4px; }
-
-    /* NUOVA SEZIONE EDITORIALE CHI SIAMO (STILE UNIFARCO) */
+    /* SEZIONE CHI SIAMO APERTA */
     .editorial-story-section {
       max-width: 900px;
-      margin: 35px auto 25px;
+      margin: 35px auto 10px;
       padding: 0 20px;
       width: 100%;
     }
-   .editorial-story-card {
+    .editorial-story-card {
       background: transparent;
       border: none;
       border-radius: 0;
@@ -363,8 +261,8 @@
     }
     .editorial-story-imgbox {
       width: 100%;
-      height: 100%;
       min-height: 280px;
+      height: 100%;
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
@@ -375,10 +273,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-    .editorial-story-content {
-      display: flex;
-      flex-direction: column;
     }
     .editorial-story-badge {
       font-size: 0.78rem;
@@ -405,11 +299,122 @@
       color: var(--primary-dark);
     }
 
+    /* SEZIONE SERVIZI VERTICALE */
+    .services-vertical-section {
+      max-width: 900px;
+      margin: 25px auto 35px;
+      padding: 0 20px;
+      width: 100%;
+    }
+    .section-headline {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .section-headline-subtitle {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--primary-green);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .section-headline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--primary-dark);
+    }
+
+    .services-list-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .service-row-item {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+      align-items: center;
+      box-shadow: 0 4px 14px rgba(0, 77, 38, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .service-row-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 77, 38, 0.08);
+    }
+
+    .service-row-imgbox {
+      width: 100%;
+      height: 160px;
+      background: #fbfdfc;
+      border-radius: 12px;
+      border: 1px solid #e1efe5;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+    .service-row-imgbox img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .service-row-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .service-row-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+    .service-row-desc {
+      font-size: 0.93rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .service-inline-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .btn-wa-pill {
+      background: #25d366;
+      color: #ffffff;
+    }
+    .btn-phone-pill {
+      background: var(--primary-green);
+      color: #ffffff;
+    }
+    .service-inline-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
     @media (max-width: 768px) {
       .editorial-story-card {
         grid-template-columns: 1fr;
-        padding: 22px 18px;
-        gap: 20px;
+        gap: 18px;
       }
       .editorial-story-imgbox {
         min-height: 220px;
@@ -418,9 +423,20 @@
       .editorial-story-title {
         font-size: 1.55rem;
       }
+      .service-row-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px;
+      }
+      .service-row-imgbox {
+        height: 180px;
+      }
+      .service-row-title {
+        font-size: 1.25rem;
+      }
     }
 
-    /* Bento Grid */
+    /* Bento Grid (Orari, Dove siamo, Contatti, Recensioni) */
     .grid-container {
       max-width: 900px;
       margin: 0 auto;
@@ -441,7 +457,7 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 20px 18px;
-      min-height: 180px;
+      min-height: 175px;
       background-color: var(--card-bg);
       border: 1px solid var(--border-color);
       box-shadow: 0 4px 15px rgba(0, 77, 38, 0.05);
@@ -466,13 +482,10 @@
       background: linear-gradient(135deg, #eaf6ee 0%, #d8eee0 100%);
     }
 
-    .card-nutrizione {
-      background: linear-gradient(135deg, #f7fdf9 0%, #e2f5e8 100%);
-      border: 1.5px solid #a8dfba;
-    }
-
     .card-posizione {
+      grid-column: span 2;
       background: linear-gradient(135deg, #ffffff 0%, #f6faf7 100%);
+      min-height: 130px;
     }
 
     .card-recensioni {
@@ -602,28 +615,6 @@
       font-weight: bold;
     }
 
-    .modal-img-container {
-      width: 100%;
-      background: #fbfdfc;
-      border-radius: 14px;
-      border: 1px solid var(--border-color);
-      padding: 8px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-img-contained {
-      width: auto;
-      max-width: 100%;
-      max-height: 240px;
-      height: auto;
-      object-fit: contain;
-      border-radius: 10px;
-      display: block;
-      margin: 0 auto;
-    }
-
     .modal-body p {
       font-size: 0.95rem;
       line-height: 1.6;
@@ -658,7 +649,6 @@
     .btn-action-green { background: var(--primary-green); color: #fff; }
     .btn-action-whatsapp { background: #25d366; color: #fff; }
     .btn-action-maps { background: #1a73e8; color: #fff; }
-    .btn-action-phone { background: #00562b; color: #fff; }
 
     .map-frame-box {
       width: 100%;
@@ -710,6 +700,16 @@
           </a>
         </li>
         <li>
+          <a href="#sezione-storia" onclick="toggleDrawer(false)">
+            <i class="fa-solid fa-landmark"></i> Chi Siamo (Storia)
+          </a>
+        </li>
+        <li>
+          <a href="#sezione-servizi" onclick="toggleDrawer(false)">
+            <i class="fa-solid fa-stethoscope"></i> I Nostri Servizi
+          </a>
+        </li>
+        <li>
           <a href="javascript:void(0)" onclick="goToSection('modal-contatti')">
             <i class="fa-solid fa-phone"></i> Contatti &amp; WhatsApp
           </a>
@@ -720,18 +720,8 @@
           </a>
         </li>
         <li>
-          <a href="javascript:void(0)" onclick="goToSection('modal-nutrizione')">
-            <i class="fa-solid fa-apple-whole"></i> Consulenza Nutrizionale
-          </a>
-        </li>
-        <li>
           <a href="javascript:void(0)" onclick="goToSection('modal-posizione')">
             <i class="fa-solid fa-map-location-dot"></i> Dove Siamo (Mappa)
-          </a>
-        </li>
-        <li>
-          <a href="#sezione-storia" onclick="toggleDrawer(false)">
-            <i class="fa-solid fa-landmark"></i> Chi Siamo (Storia)
           </a>
         </li>
         <li>
@@ -750,7 +740,6 @@
     <h1 class="hero-title">FARMACIA STOPPATO</h1>
     <p class="hero-tagline">Tradizione e innovazione al servizio della tua salute</p>
 
-    <!-- Tasto WhatsApp Distaccato in Grande -->
     <div class="hero-wa-container">
       <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="hero-wa-btn">
         <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
@@ -758,77 +747,7 @@
     </div>
   </div>
 
-  <!-- Carosello Servizi Orizzontale a Scorrimento -->
-  <div class="services-carousel-section">
-    <div class="carousel-section-title">I Nostri Servizi Sanitari</div>
-    <div class="carousel-wrapper">
-      <button class="carousel-nav-btn carousel-nav-left" onclick="scrollCarousel(-160)"><i class="fa-solid fa-chevron-left"></i></button>
-      
-      <div class="carousel-track" id="servicesTrack">
-        
-        <!-- 1. Telemedicina -->
-        <div class="service-bubble-card" onclick="openSingleService('Telemedicina', 'telemedicina.png', 'ECG, Holter pressorio e cardiaco con refertazione specialistica rapida.')">
-          <div class="service-thumb-box">
-            <img src="telemedicina.png" alt="Telemedicina" />
-          </div>
-          <span>Telemedicina</span>
-        </div>
-
-        <!-- 2. Autoanalisi (Pressione & Analisi) -->
-        <div class="service-bubble-card" onclick="openSingleService('Pressione & Analisi', 'pressione.png', 'Misurazione immediata di Pressione, Colesterolo, Glicemia e Trigliceridi con valori certi in pochi minuti.')">
-          <div class="service-thumb-box">
-            <img src="pressione.png" alt="Pressione e Analisi" />
-          </div>
-          <span>Pressione &amp; Analisi</span>
-        </div>
-
-        <!-- 3. Consulenza Nutrizionale -->
-        <div class="service-bubble-card" onclick="openModal('modal-nutrizione')">
-          <div class="service-thumb-box">
-            <img src="nutrizionista.png" alt="Nutrizionista" />
-          </div>
-          <span>Consulenza Nutrizionale</span>
-        </div>
-
-        <!-- 4. Prenotazione Ricette WhatsApp -->
-        <div class="service-bubble-card" onclick="openSingleService('Prenotazione Ricette WhatsApp', 'prenotazione%20ricette.png', 'Invia con comodità le ricette mediche al nostro numero WhatsApp per trovare i tuoi farmaci pronti al banco senza attese.')">
-          <div class="service-thumb-box">
-            <img src="prenotazione%20ricette.png" alt="Prenotazione Ricette" />
-          </div>
-          <span>Ricette WhatsApp</span>
-        </div>
-
-        <!-- 5. Glovo -->
-        <div class="service-bubble-card" onclick="openSingleService('Consegna a Domicilio Glovo', 'glovo.png', 'Ricevi a casa o in ufficio integratori, cosmetici e prodotti da banco in tempo record con il nostro servizio Glovo.')">
-          <div class="service-thumb-box">
-            <img src="glovo.png" alt="Glovo" />
-          </div>
-          <span>Consegna Glovo</span>
-        </div>
-
-        <!-- 6. Dermocosmesi -->
-        <div class="service-bubble-card" onclick="openSingleService('Dermocosmesi', 'dermocosmesi.png', 'Linee dermatologiche di alta gamma e consulenze mirate per la salute, la detersione e la cura della pelle.')">
-          <div class="service-thumb-box">
-            <img src="dermocosmesi.png" alt="Dermocosmesi" />
-          </div>
-          <span>Dermocosmesi</span>
-        </div>
-
-        <!-- 7. Foratura Lobi -->
-        <div class="service-bubble-card" onclick="openSingleService('Foratura Lobi', 'foratura%20lobi.png', 'Applicazione orecchini per adulti e bambini in ambiente igienico con capsule monouso e presidi sterili.')">
-          <div class="service-thumb-box">
-            <img src="foratura%20lobi.png" alt="Foratura Lobi" />
-          </div>
-          <span>Foratura Lobi</span>
-        </div>
-
-      </div>
-
-      <button class="carousel-nav-btn carousel-nav-right" onclick="scrollCarousel(160)"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
-  </div>
-
-  <!-- SEZIONE EDITORIALE CHI SIAMO (FOTO A SINISTRA E TESTO A DESTRA) -->
+  <!-- SEZIONE EDITORIALE CHI SIAMO -->
   <section class="editorial-story-section" id="sezione-storia">
     <div class="editorial-story-card">
       <div class="editorial-story-imgbox">
@@ -847,7 +766,117 @@
     </div>
   </section>
 
-  <!-- Bento Grid (Senza riquadro storia) -->
+  <!-- SEZIONE SERVIZI VERTICALE -->
+  <section class="services-vertical-section" id="sezione-servizi">
+    <div class="section-headline">
+      <div class="section-headline-subtitle">Presidi &amp; Consulenze</div>
+      <h2 class="section-headline-title">I Nostri Servizi</h2>
+    </div>
+
+    <div class="services-list-vertical">
+
+      <!-- 1. Telemedicina -->
+      <div class="service-row-item">
+        <div class="service-row-imgbox">
+          <img src="telemedicina.png" alt="Telemedicina" />
+        </div>
+        <div class="service-row-content">
+          <h3 class="service-row-title">Telemedicina</h3>
+          <p class="service-row-desc">ECG, Holter pressorio e cardiaco con refertazione specialistica rapida e referto valido per fini diagnostici e sportivi.</p>
+          <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20servizio%20di%20Telemedicina" target="_blank" class="service-inline-btn btn-wa-pill">
+            <i class="fa-brands fa-whatsapp"></i> Prenota su WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Autoanalisi (Pressione & Analisi) -->
+      <div class="service-row-item">
+        <div class="service-row-imgbox">
+          <img src="pressione.png" alt="Pressione e Analisi" />
+        </div>
+        <div class="service-row-content">
+          <h3 class="service-row-title">Pressione &amp; Analisi del Sangue</h3>
+          <p class="service-row-desc">Misurazione immediata di Pressione, Colesterolo, Glicemia e Trigliceridi con valori certi in pochi minuti e consulenza dedicata.</p>
+          <a href="tel:08563780" class="service-inline-btn btn-phone-pill">
+            <i class="fa-solid fa-phone"></i> Chiama per Info
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Consulenza Nutrizionale -->
+      <div class="service-row-item">
+        <div class="service-row-imgbox">
+          <img src="nutrizionista.png" alt="Nutrizionista" />
+        </div>
+        <div class="service-row-content">
+          <h3 class="service-row-title">Consulenza Nutrizionale</h3>
+          <p class="service-row-desc">Consulenza nutrizionale in farmacia: verrai seguito dalla <strong>Dietista Dott.ssa Lucia Di Lorenzo</strong> con studio delle abitudini alimentari e analisi corporea personalizzata.</p>
+          <a href="tel:330671632" class="service-inline-btn btn-phone-pill">
+            <i class="fa-solid fa-phone"></i> Chiama la Dott.ssa: 330 671632
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Prenotazione Ricette WhatsApp -->
+      <div class="service-row-item">
+        <div class="service-row-imgbox">
+          <img src="prenotazione%20ricette.png" alt="Prenotazione Ricette" />
+        </div>
+        <div class="service-row-content">
+          <h3 class="service-row-title">Prenotazione Ricette WhatsApp</h3>
+          <p class="service-row-desc">Invia comodamente le tue ricette mediche e promemoria al nostro numero WhatsApp per trovare i farmaci già pronti al banco, evitando attese.</p>
+          <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20questi%20farmaci" target="_blank" class="service-inline-btn btn-wa-pill">
+            <i class="fa-brands fa-whatsapp"></i> Invia Ricetta
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. Consegna a Domicilio Glovo -->
+      <div class="service-row-item">
+        <div class="service-row-imgbox">
+          <img src="glovo.png" alt="Glovo" />
+        </div>
+        <div class="service-row-content">
+          <h3 class="service-row-title">Consegna a Domicilio Glovo</h3>
+          <p class="service-row-desc">Ricevi a casa o in ufficio integratori, cosmetici e prodotti da banco in tempo record direttamente tramite l'app Glovo.</p>
+          <a href="https://glovoapp.com" target="_blank" class="service-inline-btn btn-phone-pill">
+            <i class="fa-solid fa-truck-fast"></i> Ordina con Glovo
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. Dermocosmesi -->
+      <div class="service-row-item">
+        <div class="service-row-imgbox">
+          <img src="dermocosmesi.png" alt="Dermocosmesi" />
+        </div>
+        <div class="service-row-content">
+          <h3 class="service-row-title">Dermocosmesi</h3>
+          <p class="service-row-desc">Linee dermatologiche di alta gamma, trattamenti mirati per pelli sensibili e consulenze su misura per la salute e il benessere cutaneo.</p>
+          <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20consigli%20di%20dermocosmesi" target="_blank" class="service-inline-btn btn-wa-pill">
+            <i class="fa-brands fa-whatsapp"></i> Chiedi Consiglio
+          </a>
+        </div>
+      </div>
+
+      <!-- 7. Foratura Lobi -->
+      <div class="service-row-item">
+        <div class="service-row-imgbox">
+          <img src="foratura%20lobi.png" alt="Foratura Lobi" />
+        </div>
+        <div class="service-row-content">
+          <h3 class="service-row-title">Foratura Lobi</h3>
+          <p class="service-row-desc">Applicazione di orecchini per adulti e bambini con dispositivo sterile, indolore e conforme alle più rigorose normative igienico-sanitarie.</p>
+          <a href="tel:08563780" class="service-inline-btn btn-phone-pill">
+            <i class="fa-solid fa-phone"></i> Info &amp; Prenotazione
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bento Grid (Contatti, Orari, Dove Siamo, Recensioni) -->
   <div class="grid-container">
 
     <!-- 01: CONTATTI -->
@@ -868,28 +897,19 @@
       </div>
     </div>
 
-    <!-- 03: CONSULENZA NUTRIZIONALE -->
-    <div class="bento-card card-nutrizione" onclick="openModal('modal-nutrizione')">
-      <div class="card-content">
-        <span class="card-number">03</span>
-        <h2 class="card-title">Consulenza Nutrizionale</h2>
-        <p class="card-desc">Dietista Dott.ssa Lucia Di Lorenzo</p>
-      </div>
-    </div>
-
-    <!-- 04: DOVE SIAMO -->
+    <!-- 03: DOVE SIAMO -->
     <div class="bento-card card-posizione" onclick="openModal('modal-posizione')">
       <div class="card-content">
-        <span class="card-number">04</span>
+        <span class="card-number">03</span>
         <h2 class="card-title">Dove Siamo</h2>
-        <p class="card-desc">Viale G. Marconi 8 • Mappa &amp; Percorso</p>
+        <p class="card-desc">Viale Guglielmo Marconi 8, Pescara • Mappa interattiva &amp; Percorso</p>
       </div>
     </div>
 
-    <!-- 05: VALUTAZIONE DEI CLIENTI (RECENSIONI A LARGHEZZA INTERA) -->
+    <!-- 04: VALUTAZIONE DEI CLIENTI -->
     <div class="bento-card card-recensioni" onclick="openModal('modal-recensioni')">
       <div class="card-content">
-        <span class="card-number">05</span>
+        <span class="card-number">04</span>
         <div class="rating-badge">
           <span class="rating-score">4.7</span>
           <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
@@ -900,26 +920,6 @@
       </div>
     </div>
 
-  </div>
-
-  <!-- MODAL DINAMICO SINGOLO SERVIZIO -->
-  <div id="modal-single-service" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
-    <div class="modal-sheet">
-      <div class="modal-handle"></div>
-      <div class="modal-header">
-        <h2 class="modal-title" id="singleServiceTitle">Servizio</h2>
-        <button class="close-btn" onclick="closeModal('modal-single-service')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-img-container">
-          <img id="singleServiceImg" class="modal-img-contained" src="" alt="Dettaglio Servizio" />
-        </div>
-        <p id="singleServiceDesc" style="font-size: 1rem; line-height: 1.6; color: #334d3c;"></p>
-        <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20informazioni%20sui%20vostri%20servizi" target="_blank" class="btn-action btn-action-whatsapp">
-          <i class="fa-brands fa-whatsapp"></i> Richiedi informazioni su WhatsApp
-        </a>
-      </div>
-    </div>
   </div>
 
   <!-- MODAL: 01 CONTATTI -->
@@ -973,29 +973,7 @@
     </div>
   </div>
 
-  <!-- MODAL: 03 CONSULENZA NUTRIZIONALE -->
-  <div id="modal-nutrizione" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
-    <div class="modal-sheet">
-      <div class="modal-handle"></div>
-      <div class="modal-header">
-        <h2 class="modal-title">Consulenza Nutrizionale</h2>
-        <button class="close-btn" onclick="closeModal('modal-nutrizione')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-img-container">
-          <img src="nutrizionista.png" class="modal-img-contained" alt="Dietista Lucia Di Lorenzo" onerror="this.style.display='none'" />
-        </div>
-        <p><strong>Consulenza nutrizionale in farmacia</strong>: verrai seguito dalla <strong>Dietista Dott.ssa Lucia Di Lorenzo</strong> con un approccio professionale e mirato.</p>
-        <p>Il servizio include uno <strong>studio e analisi delle abitudini alimentari</strong> e l'<strong>analisi corporea</strong>, in modo da adattare il percorso e renderlo perfettamente personalizzato per le tue esigenze.</p>
-        
-        <a href="tel:330671632" class="btn-action btn-action-phone">
-          <i class="fa-solid fa-phone"></i> Chiama la Dott.ssa: 330 671632
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL: 04 DOVE SIAMO -->
+  <!-- MODAL: 03 DOVE SIAMO -->
   <div id="modal-posizione" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
@@ -1019,7 +997,7 @@
     </div>
   </div>
 
-  <!-- MODAL: 05 RECENSIONI -->
+  <!-- MODAL: 04 RECENSIONI -->
   <div id="modal-recensioni" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
@@ -1072,20 +1050,6 @@
         overlay.classList.remove('active');
         document.body.style.overflow = '';
       }
-    }
-
-    // Apertura Dettaglio Singolo Servizio Dinamico
-    function openSingleService(title, imgSrc, desc) {
-      document.getElementById('singleServiceTitle').innerText = title;
-      document.getElementById('singleServiceImg').src = imgSrc;
-      document.getElementById('singleServiceDesc').innerText = desc;
-      openModal('modal-single-service');
-    }
-
-    // Scroll Carosello Orizzontale
-    function scrollCarousel(distance) {
-      const track = document.getElementById('servicesTrack');
-      track.scrollBy({ left: distance, behavior: 'smooth' });
     }
 
     // Gestione Drawer Menu
