@@ -51,7 +51,7 @@
       flex-direction: column;
     }
 
-    /* Header Fisso con Navigazione */
+    /* Header Fisso */
     header {
       width: 100%;
       background: rgba(255, 255, 255, 0.98);
@@ -124,12 +124,11 @@
       background: var(--accent-green-light);
     }
 
-    /* Margine di compensazione per i salti ai link */
     section {
       scroll-margin-top: 110px;
     }
 
-    /* Hero Banner */
+    /* Hero */
     .hero-banner {
       padding: 30px 16px 20px;
       text-align: center;
@@ -194,7 +193,7 @@
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    /* SEZIONE CHI SIAMO APERTA */
+    /* Chi Siamo */
     .editorial-story-section {
       max-width: 900px;
       margin: 30px auto 10px;
@@ -244,7 +243,7 @@
       margin-bottom: 12px;
     }
 
-    /* GALLERIA CAROSELLO FOTO TEAM & FARMACIA */
+    /* Galleria Carosello */
     .gallery-carousel-section {
       max-width: 900px;
       margin: 35px auto 25px;
@@ -324,7 +323,7 @@
     .gallery-prev-btn { left: 4px; }
     .gallery-next-btn { right: 4px; }
 
-    /* SEZIONE SERVIZI VERTICALE */
+    /* SEZIONE SERVIZI VERTICALE CON FOTO PICCOLE E MAI TAGLIATE */
     .services-vertical-section {
       max-width: 900px;
       margin: 25px auto 40px;
@@ -359,31 +358,35 @@
       border-radius: 16px;
       padding: 18px;
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 170px 1fr;
       gap: 20px;
       align-items: center;
       box-shadow: 0 4px 12px rgba(0, 77, 38, 0.04);
     }
+    
+    /* Box immagine compatto con contenimento integrale */
     .service-row-imgbox {
       width: 100%;
-      height: 150px;
+      height: 140px;
       background: #fbfdfc;
-      border-radius: 12px;
+      border-radius: 14px;
       border: 1px solid #e1efe5;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
+      padding: 8px;
     }
     .service-row-imgbox img {
       max-width: 100%;
       max-height: 100%;
       width: auto;
       height: auto;
-      object-fit: contain;
+      object-fit: contain; /* NON TAGLIA MAI L'IMMAGINE */
       display: block;
+      margin: auto;
     }
+
     .service-row-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.35rem;
@@ -416,7 +419,7 @@
       color: #ffffff;
     }
 
-    /* SEZIONE CONTATTI */
+    /* Contatti */
     .open-section {
       max-width: 900px;
       margin: 20px auto 35px;
@@ -467,7 +470,7 @@
       text-decoration: none;
     }
 
-    /* TABELLA ORARI */
+    /* Orari */
     .hours-table-open {
       width: 100%;
       border-collapse: collapse;
@@ -502,7 +505,7 @@
       text-align: right;
     }
 
-    /* SEZIONE MAPPA & RECENSIONI */
+    /* Mappa & Recensioni */
     .location-reviews-row {
       max-width: 900px;
       margin: 10px auto 45px;
@@ -581,7 +584,7 @@
       color: var(--text-muted);
     }
 
-    /* Regole specifiche per Smartphone */
+    /* Ottimizzazioni Smartphone */
     @media (max-width: 768px) {
       .header-container {
         flex-direction: column;
@@ -623,13 +626,17 @@
         height: 160px;
         border-radius: 14px;
       }
+      
+      /* Card servizi su mobile: foto compatta in alto, testo pulito sotto */
       .service-row-item {
         grid-template-columns: 1fr;
         gap: 14px;
-        padding: 16px;
+        padding: 14px;
       }
       .service-row-imgbox {
-        height: 170px;
+        height: 150px;
+        width: 100%;
+        padding: 6px;
       }
       .service-row-title {
         font-size: 1.25rem;
@@ -739,6 +746,7 @@
     </div>
   </section>
 
+  <!-- SEZIONE SERVIZI VERTICALE -->
   <section class="services-vertical-section" id="sezione-servizi">
     <div class="section-headline">
       <div class="section-headline-subtitle">Presidi &amp; Consulenze</div>
@@ -747,6 +755,7 @@
 
     <div class="services-list-vertical">
 
+      <!-- 1. Telemedicina -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
           <img src="telemedicina.png" alt="Telemedicina" />
@@ -760,6 +769,7 @@
         </div>
       </div>
 
+      <!-- 2. Autoanalisi -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
           <img src="pressione.png" alt="Pressione e Analisi" />
@@ -773,6 +783,7 @@
         </div>
       </div>
 
+      <!-- 3. Nutrizionista (visibile per intero) -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
           <img src="nutrizionista.png" alt="Nutrizionista" />
@@ -786,6 +797,7 @@
         </div>
       </div>
 
+      <!-- 4. Prenotazione Ricette WhatsApp -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
           <img src="prenotazione%20ricette.png" alt="Prenotazione Ricette" />
@@ -799,6 +811,7 @@
         </div>
       </div>
 
+      <!-- 5. Glovo (visibile per intero con logo) -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
           <img src="glovo.png" alt="Glovo" />
@@ -812,6 +825,7 @@
         </div>
       </div>
 
+      <!-- 6. Dermocosmesi -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
           <img src="dermocosmesi.png" alt="Dermocosmesi" />
@@ -825,6 +839,7 @@
         </div>
       </div>
 
+      <!-- 7. Foratura Lobi (visibile per intero) -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
           <img src="foratura%20lobi.png" alt="Foratura Lobi" />
