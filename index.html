@@ -81,7 +81,7 @@
       transform: scale(0.92);
     }
 
-    /* Drawer Laterale */
+    /* Drawer Laterale Verde */
     .drawer-overlay {
       position: fixed;
       inset: 0;
@@ -241,7 +241,7 @@
       box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45);
     }
 
-    /* SEZIONE CHI SIAMO APERTA */
+    /* SEZIONE CHI SIAMO APERTA (SENZA BORDI NÉ RIQUADRI) */
     .editorial-story-section {
       max-width: 900px;
       margin: 35px auto 10px;
@@ -256,16 +256,16 @@
       box-shadow: none;
       display: grid;
       grid-template-columns: 1fr 1.25fr;
-      gap: 30px;
+      gap: 32px;
       align-items: center;
     }
     .editorial-story-imgbox {
       width: 100%;
       min-height: 280px;
       height: 100%;
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 6px 18px rgba(0, 77, 38, 0.08);
       background: #f4f8f5;
     }
     .editorial-story-imgbox img {
@@ -290,7 +290,7 @@
       margin-bottom: 16px;
     }
     .editorial-story-text {
-      font-size: 0.94rem;
+      font-size: 0.95rem;
       line-height: 1.65;
       color: #3b5042;
       margin-bottom: 12px;
@@ -308,7 +308,7 @@
     }
     .section-headline {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
     .section-headline-subtitle {
       font-size: 0.78rem;
@@ -327,7 +327,7 @@
     .services-list-vertical {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 20px;
     }
 
     .service-row-item {
@@ -336,7 +336,7 @@
       border-radius: 16px;
       padding: 20px;
       display: grid;
-      grid-template-columns: 220px 1fr;
+      grid-template-columns: 210px 1fr;
       gap: 24px;
       align-items: center;
       box-shadow: 0 4px 14px rgba(0, 77, 38, 0.04);
@@ -357,7 +357,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
+      padding: 8px;
     }
     .service-row-imgbox img {
       max-width: 100%;
@@ -436,7 +436,7 @@
       }
     }
 
-    /* Bento Grid (Orari, Dove siamo, Contatti, Recensioni) */
+    /* Bento Grid (Contatti, Orari, Dove Siamo, Recensioni) */
     .grid-container {
       max-width: 900px;
       margin: 0 auto;
@@ -740,6 +740,7 @@
     <h1 class="hero-title">FARMACIA STOPPATO</h1>
     <p class="hero-tagline">Tradizione e innovazione al servizio della tua salute</p>
 
+    <!-- Tasto WhatsApp Distaccato in Grande -->
     <div class="hero-wa-container">
       <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="hero-wa-btn">
         <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
@@ -747,7 +748,7 @@
     </div>
   </div>
 
-  <!-- SEZIONE EDITORIALE CHI SIAMO -->
+  <!-- SEZIONE EDITORIALE CHI SIAMO (SENZA BORDI, FOTO A SINISTRA E TESTO A DESTRA) -->
   <section class="editorial-story-section" id="sezione-storia">
     <div class="editorial-story-card">
       <div class="editorial-story-imgbox">
@@ -795,8 +796,8 @@
           <img src="pressione.png" alt="Pressione e Analisi" />
         </div>
         <div class="service-row-content">
-          <h3 class="service-row-title">Pressione &amp; Analisi del Sangue</h3>
-          <p class="service-row-desc">Misurazione immediata di Pressione, Colesterolo, Glicemia e Trigliceridi con valori certi in pochi minuti e consulenza dedicata.</p>
+          <h3 class="service-row-title">Misurazione Pressione &amp; Analisi Sangue</h3>
+          <p class="service-row-desc">Misurazione immediata di Pressione arteriosa, Colesterolo, Glicemia e Trigliceridi con valori certi in pochi minuti e consulenza dedicata.</p>
           <a href="tel:08563780" class="service-inline-btn btn-phone-pill">
             <i class="fa-solid fa-phone"></i> Chiama per Info
           </a>
@@ -810,7 +811,7 @@
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Consulenza Nutrizionale</h3>
-          <p class="service-row-desc">Consulenza nutrizionale in farmacia: verrai seguito dalla <strong>Dietista Dott.ssa Lucia Di Lorenzo</strong> con studio delle abitudini alimentari e analisi corporea personalizzata.</p>
+          <p class="service-row-desc">Consulenza nutrizionale in farmacia: verrai seguito dalla <strong>Dietista Dott.ssa Lucia Di Lorenzo</strong> con studio approfondito delle abitudini alimentari e analisi corporea per un percorso su misura.</p>
           <a href="tel:330671632" class="service-inline-btn btn-phone-pill">
             <i class="fa-solid fa-phone"></i> Chiama la Dott.ssa: 330 671632
           </a>
@@ -824,7 +825,7 @@
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Prenotazione Ricette WhatsApp</h3>
-          <p class="service-row-desc">Invia comodamente le tue ricette mediche e promemoria al nostro numero WhatsApp per trovare i farmaci già pronti al banco, evitando attese.</p>
+          <p class="service-row-desc">Invia comodamente le tue ricette mediche e promemoria al nostro numero WhatsApp per trovare i farmaci già pronti al banco, azzerando le attese.</p>
           <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20questi%20farmaci" target="_blank" class="service-inline-btn btn-wa-pill">
             <i class="fa-brands fa-whatsapp"></i> Invia Ricetta
           </a>
@@ -838,7 +839,7 @@
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Consegna a Domicilio Glovo</h3>
-          <p class="service-row-desc">Ricevi a casa o in ufficio integratori, cosmetici e prodotti da banco in tempo record direttamente tramite l'app Glovo.</p>
+          <p class="service-row-desc">Ricevi a casa o in ufficio integratori, parafarmaci, cosmetici e prodotti per l'infanzia in tempo record direttamente tramite l'app Glovo.</p>
           <a href="https://glovoapp.com" target="_blank" class="service-inline-btn btn-phone-pill">
             <i class="fa-solid fa-truck-fast"></i> Ordina con Glovo
           </a>
@@ -852,7 +853,7 @@
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Dermocosmesi</h3>
-          <p class="service-row-desc">Linee dermatologiche di alta gamma, trattamenti mirati per pelli sensibili e consulenze su misura per la salute e il benessere cutaneo.</p>
+          <p class="service-row-desc">Linee dermatologiche di alta gamma, trattamenti mirati per pelli sensibili e consulenze personalizzate per la cura e la salute cutanea.</p>
           <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20consigli%20di%20dermocosmesi" target="_blank" class="service-inline-btn btn-wa-pill">
             <i class="fa-brands fa-whatsapp"></i> Chiedi Consiglio
           </a>
@@ -866,7 +867,7 @@
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Foratura Lobi</h3>
-          <p class="service-row-desc">Applicazione di orecchini per adulti e bambini con dispositivo sterile, indolore e conforme alle più rigorose normative igienico-sanitarie.</p>
+          <p class="service-row-desc">Applicazione orecchini per adulti e bambini con dispositivo sterile monouso, rapido, delicato e pienamente sicuro.</p>
           <a href="tel:08563780" class="service-inline-btn btn-phone-pill">
             <i class="fa-solid fa-phone"></i> Info &amp; Prenotazione
           </a>
