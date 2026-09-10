@@ -241,7 +241,7 @@
       box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45);
     }
 
-    /* SEZIONE CHI SIAMO APERTA (SENZA BORDI NÉ RIQUADRI) */
+    /* SEZIONE CHI SIAMO APERTA */
     .editorial-story-section {
       max-width: 900px;
       margin: 35px auto 10px;
@@ -302,7 +302,7 @@
     /* SEZIONE SERVIZI VERTICALE */
     .services-vertical-section {
       max-width: 900px;
-      margin: 25px auto 35px;
+      margin: 30px auto 40px;
       padding: 0 20px;
       width: 100%;
     }
@@ -411,6 +411,180 @@
       transform: translateY(-1px);
     }
 
+    /* SEZIONE CONTATTI APERTA */
+    .open-section {
+      max-width: 900px;
+      margin: 20px auto 40px;
+      padding: 0 20px;
+      width: 100%;
+    }
+    .contacts-grid-open {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 15px;
+    }
+    .contact-item-open {
+      background: #fbfdfc;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .contact-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary-green);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact-value {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-family: 'Playfair Display', serif;
+    }
+    .contact-action-btn {
+      margin-top: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .contact-action-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* TABELLA ORARI APERTA */
+    .hours-table-open {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 77, 38, 0.03);
+    }
+    .hours-table-open tr {
+      border-bottom: 1px solid var(--border-color);
+    }
+    .hours-table-open tr:last-child {
+      border-bottom: none;
+    }
+    .hours-table-open tr:nth-child(even) {
+      background-color: #fafdfb;
+    }
+    .hours-table-open td {
+      padding: 14px 20px;
+      font-size: 0.95rem;
+    }
+    .hours-day {
+      font-weight: 600;
+      color: var(--primary-dark);
+      width: 45%;
+    }
+    .hours-time {
+      font-weight: 700;
+      color: var(--primary-green);
+      text-align: right;
+    }
+
+    /* SEZIONE MAPPA & RECENSIONI (DUE COLONNE APERTE) */
+    .location-reviews-row {
+      max-width: 900px;
+      margin: 10px auto 50px;
+      padding: 0 20px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .open-subblock {
+      display: flex;
+      flex-direction: column;
+    }
+    .open-subblock-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+    .open-subblock-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .open-map-wrapper {
+      width: 100%;
+      height: 270px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 14px rgba(0, 77, 38, 0.04);
+      margin-bottom: 12px;
+    }
+    .open-map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .open-reviews-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .open-rating-banner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-bottom: 8px;
+    }
+    .open-rating-score {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #202124;
+      line-height: 1;
+    }
+    .open-stars {
+      color: var(--gold-star);
+      font-size: 1.15rem;
+    }
+    .open-review-quote {
+      background: var(--accent-green-light);
+      border-left: 4px solid var(--primary-green);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: #2e4635;
+      font-style: italic;
+    }
+    .open-review-quote span {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      font-style: normal;
+      color: var(--text-muted);
+    }
+
     @media (max-width: 768px) {
       .editorial-story-card {
         grid-template-columns: 1fr;
@@ -434,245 +608,14 @@
       .service-row-title {
         font-size: 1.25rem;
       }
-    }
-
-    /* Bento Grid (Contatti, Orari, Dove Siamo, Recensioni) */
-    .grid-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 10px 20px 40px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      flex: 1;
-      width: 100%;
-    }
-
-    .bento-card {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 20px 18px;
-      min-height: 175px;
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      box-shadow: 0 4px 15px rgba(0, 77, 38, 0.05);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      background-size: cover;
-      background-position: center;
-    }
-    .bento-card:active {
-      transform: scale(0.97);
-    }
-
-    .card-contatti {
-      background: linear-gradient(135deg, #007a3d 0%, #00562b 100%);
-      color: #ffffff !important;
-      border: none;
-    }
-    .card-contatti .card-number { color: #b7e8c6 !important; }
-    .card-contatti .card-title { color: #ffffff !important; }
-    .card-contatti .card-desc { color: #e3f3e8 !important; }
-
-    .card-orari {
-      background: linear-gradient(135deg, #eaf6ee 0%, #d8eee0 100%);
-    }
-
-    .card-posizione {
-      grid-column: span 2;
-      background: linear-gradient(135deg, #ffffff 0%, #f6faf7 100%);
-      min-height: 130px;
-    }
-
-    .card-recensioni {
-      grid-column: span 2;
-      min-height: 125px;
-      background: #ffffff;
-      border: 1px solid #d2e7d8;
-    }
-
-    .card-content {
-      position: relative;
-      z-index: 2;
-    }
-    .card-number {
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      color: var(--primary-green);
-      font-weight: 700;
-      margin-bottom: 4px;
-      display: block;
-    }
-    .card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.45rem;
-      line-height: 1.15;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-    .card-desc {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-      line-height: 1.35;
-    }
-
-    .rating-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-    .rating-score {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #202124;
-    }
-    .stars {
-      color: var(--gold-star);
-      font-size: 0.95rem;
-      letter-spacing: 1px;
-    }
-    .google-pill {
-      font-size: 0.75rem;
-      background: #f1f3f4;
-      color: #5f6368;
-      padding: 3px 8px;
-      border-radius: 20px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* Modali */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 30, 15, 0.6);
-      backdrop-filter: blur(8px);
-      z-index: 999;
-      display: flex;
-      align-items: flex-end;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .modal-sheet {
-      background: #ffffff;
-      color: var(--text-main);
-      width: 100%;
-      max-width: 580px;
-      margin: 0 auto;
-      border-radius: 24px 24px 0 0;
-      padding: 26px 22px 36px;
-      max-height: 85vh;
-      overflow-y: auto;
-      transform: translateY(100%);
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .modal-overlay.active .modal-sheet {
-      transform: translateY(0);
-    }
-    .modal-handle {
-      width: 40px;
-      height: 4px;
-      background: #cbe3d3;
-      border-radius: 10px;
-      margin: -6px auto 16px;
-    }
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-    .modal-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.65rem;
-      color: var(--primary-green);
-    }
-    .close-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: none;
-      background: var(--accent-green-light);
-      color: var(--primary-green);
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    .modal-body p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #334d3c;
-      margin-bottom: 14px;
-    }
-    .hours-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border-color);
-      font-size: 0.95rem;
-      color: #334d3c;
-    }
-    .hours-row strong {
-      color: var(--primary-green);
-    }
-    .btn-action {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 14px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 12px;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-    .btn-action-green { background: var(--primary-green); color: #fff; }
-    .btn-action-whatsapp { background: #25d366; color: #fff; }
-    .btn-action-maps { background: #1a73e8; color: #fff; }
-
-    .map-frame-box {
-      width: 100%;
-      height: 240px;
-      border-radius: 14px;
-      overflow: hidden;
-      margin: 15px 0 10px;
-      border: 1px solid var(--border-color);
-    }
-    .map-frame-box iframe { width: 100%; height: 100%; border: 0; }
-
-    .review-quote-box {
-      background: var(--accent-green-light);
-      border-left: 4px solid var(--primary-green);
-      padding: 12px 16px;
-      border-radius: 8px;
-      margin: 12px 0;
-    }
-    .review-author {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-top: 6px;
-      display: block;
+      .location-reviews-row {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .hours-table-open td {
+        padding: 12px 14px;
+        font-size: 0.88rem;
+      }
     }
   </style>
 </head>
@@ -710,23 +653,23 @@
           </a>
         </li>
         <li>
-          <a href="javascript:void(0)" onclick="goToSection('modal-contatti')">
-            <i class="fa-solid fa-phone"></i> Contatti &amp; WhatsApp
+          <a href="#sezione-contatti" onclick="toggleDrawer(false)">
+            <i class="fa-solid fa-phone"></i> Contatti
           </a>
         </li>
         <li>
-          <a href="javascript:void(0)" onclick="goToSection('modal-orari')">
+          <a href="#sezione-orari" onclick="toggleDrawer(false)">
             <i class="fa-solid fa-clock"></i> Orari di Apertura
           </a>
         </li>
         <li>
-          <a href="javascript:void(0)" onclick="goToSection('modal-posizione')">
+          <a href="#sezione-mappa" onclick="toggleDrawer(false)">
             <i class="fa-solid fa-map-location-dot"></i> Dove Siamo (Mappa)
           </a>
         </li>
         <li>
-          <a href="javascript:void(0)" onclick="goToSection('modal-recensioni')">
-            <i class="fa-solid fa-star"></i> Valutazione dei Clienti (4.7)
+          <a href="#sezione-recensioni" onclick="toggleDrawer(false)">
+            <i class="fa-solid fa-star"></i> Valutazione Clienti (4.7)
           </a>
         </li>
       </ul>
@@ -748,7 +691,7 @@
     </div>
   </div>
 
-  <!-- SEZIONE EDITORIALE CHI SIAMO (SENZA BORDI, FOTO A SINISTRA E TESTO A DESTRA) -->
+  <!-- SEZIONE EDITORIALE CHI SIAMO (APERTA) -->
   <section class="editorial-story-section" id="sezione-storia">
     <div class="editorial-story-card">
       <div class="editorial-story-imgbox">
@@ -877,183 +820,130 @@
     </div>
   </section>
 
-  <!-- Bento Grid (Contatti, Orari, Dove Siamo, Recensioni) -->
-  <div class="grid-container">
-
-    <!-- 01: CONTATTI -->
-    <div class="bento-card card-contatti" onclick="openModal('modal-contatti')">
-      <div class="card-content">
-        <span class="card-number">01</span>
-        <h2 class="card-title">Contatti</h2>
-        <p class="card-desc">085 63780 • Chiama in Farmacia</p>
-      </div>
+  <!-- SEZIONE CONTATTI APERTA (SENZA RIQUADRO ESTERNO) -->
+  <section class="open-section" id="sezione-contatti">
+    <div class="section-headline" style="text-align: left; margin-bottom: 12px;">
+      <div class="section-headline-subtitle">Comunicazione Diretta</div>
+      <h2 class="section-headline-title">Contatti</h2>
     </div>
 
-    <!-- 02: ORARI -->
-    <div class="bento-card card-orari" onclick="openModal('modal-orari')">
-      <div class="card-content">
-        <span class="card-number">02</span>
-        <h2 class="card-title">Orari</h2>
-        <p class="card-desc">Lun-Ven 8:00 - 20:00 (Continuato)</p>
-      </div>
-    </div>
-
-    <!-- 03: DOVE SIAMO -->
-    <div class="bento-card card-posizione" onclick="openModal('modal-posizione')">
-      <div class="card-content">
-        <span class="card-number">03</span>
-        <h2 class="card-title">Dove Siamo</h2>
-        <p class="card-desc">Viale Guglielmo Marconi 8, Pescara • Mappa interattiva &amp; Percorso</p>
-      </div>
-    </div>
-
-    <!-- 04: VALUTAZIONE DEI CLIENTI -->
-    <div class="bento-card card-recensioni" onclick="openModal('modal-recensioni')">
-      <div class="card-content">
-        <span class="card-number">04</span>
-        <div class="rating-badge">
-          <span class="rating-score">4.7</span>
-          <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
-          <span class="google-pill"><i class="fa-brands fa-google"></i> Google</span>
-        </div>
-        <h2 class="card-title">Valutazione dei Clienti</h2>
-        <p class="card-desc">Oltre 4.7 stelle per disponibilità, puntualità e massima professionalità.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- MODAL: 01 CONTATTI -->
-  <div id="modal-contatti" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
-    <div class="modal-sheet">
-      <div class="modal-handle"></div>
-      <div class="modal-header">
-        <h2 class="modal-title">Contatti Diretti</h2>
-        <button class="close-btn" onclick="closeModal('modal-contatti')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p><i class="fa-solid fa-phone" style="color:var(--primary-green)"></i> <strong>Telefono Fisso:</strong> 085 63780</p>
-        <p><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> <strong>WhatsApp Farmaci:</strong> 351 8267441</p>
-        
-        <a href="tel:08563780" class="btn-action btn-action-green">
-          <i class="fa-solid fa-phone"></i> Chiama in Farmacia
+    <div class="contacts-grid-open">
+      <!-- Telefono Fisso -->
+      <div class="contact-item-open">
+        <span class="contact-label"><i class="fa-solid fa-phone"></i> Telefono Fisso</span>
+        <div class="contact-value">085 63780</div>
+        <a href="tel:08563780" class="contact-action-btn btn-phone-pill">
+          <i class="fa-solid fa-phone"></i> Chiama il fisso
         </a>
-        <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="btn-action btn-action-whatsapp">
+      </div>
+
+      <!-- WhatsApp Mobile -->
+      <div class="contact-item-open">
+        <span class="contact-label"><i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> WhatsApp Farmaci</span>
+        <div class="contact-value">351 8267441</div>
+        <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20informazioni%20o%20prenotare%20un%20farmaco" target="_blank" class="contact-action-btn btn-wa-pill">
           <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
         </a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- MODAL: 02 ORARI -->
-  <div id="modal-orari" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
-    <div class="modal-sheet">
-      <div class="modal-handle"></div>
-      <div class="modal-header">
-        <h2 class="modal-title">Orari di Apertura</h2>
-        <button class="close-btn" onclick="closeModal('modal-orari')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="hours-row">
-          <span>Lunedì – Venerdì</span>
-          <strong>08:00 – 20:00 (Continuato)</strong>
-        </div>
-        <div class="hours-row">
-          <span>Sabato Mattina</span>
-          <strong>08:30 – 13:00</strong>
-        </div>
-        <div class="hours-row">
-          <span>Sabato Pomeriggio</span>
-          <strong>16:00 – 19:30</strong>
-        </div>
-        <div class="hours-row">
-          <span>Domenica</span>
-          <strong>Chiuso (salvo turni)</strong>
-        </div>
-      </div>
+  <!-- SEZIONE ORARI APERTA (TABELLA SENZA RIQUADRO ESTERNO) -->
+  <section class="open-section" id="sezione-orari">
+    <div class="section-headline" style="text-align: left; margin-bottom: 12px;">
+      <div class="section-headline-subtitle">Disponibilità &amp; Turni</div>
+      <h2 class="section-headline-title">Orari di Apertura</h2>
     </div>
-  </div>
 
-  <!-- MODAL: 03 DOVE SIAMO -->
-  <div id="modal-posizione" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
-    <div class="modal-sheet">
-      <div class="modal-handle"></div>
-      <div class="modal-header">
-        <h2 class="modal-title">Dove Trovarci</h2>
-        <button class="close-btn" onclick="closeModal('modal-posizione')">&times;</button>
+    <table class="hours-table-open">
+      <tbody>
+        <tr>
+          <td class="hours-day">Lunedì – Venerdì</td>
+          <td class="hours-time">08:00 – 20:00 <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted);">(Continuato)</span></td>
+        </tr>
+        <tr>
+          <td class="hours-day">Sabato Mattina</td>
+          <td class="hours-time">08:30 – 13:00</td>
+        </tr>
+        <tr>
+          <td class="hours-day">Sabato Pomeriggio</td>
+          <td class="hours-time">16:00 – 19:30</td>
+        </tr>
+        <tr>
+          <td class="hours-day">Domenica</td>
+          <td class="hours-time">Chiuso <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted);">(salvo turni di guardia)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SEZIONE MAPPA (SINISTRA) E RECENSIONI (DESTRA) SENZA RIQUADRI -->
+  <section class="location-reviews-row">
+    
+    <!-- A Sinistra: Dove Siamo (Mappa Interattiva) -->
+    <div class="open-subblock" id="sezione-mappa">
+      <h3 class="open-subblock-title">Dove Siamo</h3>
+      <p class="open-subblock-desc"><i class="fa-solid fa-location-dot" style="color:var(--primary-green);"></i> Viale Guglielmo Marconi 8, 65127 Pescara (PE)</p>
+      
+      <!-- Mappa Interattiva -->
+      <div class="open-map-wrapper">
+        <iframe 
+          src="https://maps.google.com/maps?q=Farmacia+Stoppato+Viale+Marconi+8+Pescara&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+          loading="lazy" 
+          allowfullscreen>
+        </iframe>
       </div>
-      <div class="modal-body">
-        <p><i class="fa-solid fa-location-dot" style="color:var(--primary-green)"></i> <strong>Indirizzo:</strong> Viale Guglielmo Marconi 8, 65127 Pescara (PE)</p>
-        <div class="map-frame-box">
-          <iframe 
-            src="https://maps.google.com/maps?q=Farmacia+Stoppato+Viale+Marconi+8+Pescara&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-            loading="lazy" 
-            allowfullscreen>
-          </iframe>
-        </div>
-        <a href="https://maps.google.com/?q=Farmacia+Stoppato+Viale+Marconi+8+Pescara" target="_blank" class="btn-action btn-action-maps">
-          <i class="fa-solid fa-diamond-turn-right"></i> Apri su Google Maps &amp; Naviga
-        </a>
-      </div>
+
+      <a href="https://maps.google.com/?q=Farmacia+Stoppato+Viale+Marconi+8+Pescara" target="_blank" class="service-inline-btn btn-phone-pill" style="align-self: flex-start; padding: 10px 18px;">
+        <i class="fa-solid fa-diamond-turn-right"></i> Apri su Google Maps &amp; Naviga
+      </a>
     </div>
-  </div>
 
-  <!-- MODAL: 04 RECENSIONI -->
-  <div id="modal-recensioni" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
-    <div class="modal-sheet">
-      <div class="modal-handle"></div>
-      <div class="modal-header">
-        <h2 class="modal-title">Valutazione dei Clienti</h2>
-        <button class="close-btn" onclick="closeModal('modal-recensioni')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div style="text-align: center; padding: 10px 0 16px;">
-          <div style="font-size: 2.8rem; font-weight: 700; color: #202124; line-height: 1;">4.7</div>
-          <div style="color: var(--gold-star); font-size: 1.2rem; margin: 8px 0;">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
+    <!-- A Destra: Valutazione dei Clienti (Recensioni Google) -->
+    <div class="open-subblock" id="sezione-recensioni">
+      <h3 class="open-subblock-title">Valutazione dei Clienti</h3>
+      <p class="open-subblock-desc">La fiducia di chi ci sceglie ogni giorno per salute e benessere.</p>
+
+      <div class="open-reviews-container">
+        <!-- Voto Grande & Stelle -->
+        <div class="open-rating-banner">
+          <div class="open-rating-score">4.7</div>
+          <div>
+            <div class="open-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-top: 4px;">
+              <i class="fa-brands fa-google"></i> Recensioni Google Verificate
+            </div>
           </div>
-          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0;">Valutazione media basata sulle recensioni verificate dei clienti</p>
         </div>
 
-        <div class="review-quote-box">
-          <p style="margin: 0; font-style: italic;">“Personale sempre gentile, preparato e disponibile per ogni consiglio. Il servizio di prenotazione ricette è comodissimo.”</p>
-          <span class="review-author">★★★★★ – Cliente Verificato</span>
+        <!-- Recensione 1 -->
+        <div class="open-review-quote">
+          “Personale sempre gentile, preparato e disponibile per ogni consiglio. Il servizio di prenotazione ricette è comodissimo.”
+          <span>★★★★★ – Cliente Verificato</span>
         </div>
 
-        <div class="review-quote-box">
-          <p style="margin: 0; font-style: italic;">“Farmacia storica ben fornita, orario continuato molto utile per chi lavora e massima cortesia.”</p>
-          <span class="review-author">★★★★★ – Cliente Verificato</span>
+        <!-- Recensione 2 -->
+        <div class="open-review-quote">
+          “Farmacia storica ben fornita, orario continuato utilissimo per chi lavora e massima cortesia.”
+          <span>★★★★★ – Cliente Verificato</span>
         </div>
 
-        <a href="https://www.google.com/search?q=Farmacia+Stoppato+Pescara+recensioni" target="_blank" class="btn-action btn-action-maps">
+        <a href="https://www.google.com/search?q=Farmacia+Stoppato+Pescara+recensioni" target="_blank" class="service-inline-btn" style="background:#1a73e8; color:#fff; align-self: flex-start; padding: 10px 18px; margin-top: 4px;">
           <i class="fa-brands fa-google"></i> Leggi tutte le recensioni su Google
         </a>
       </div>
     </div>
-  </div>
 
+  </section>
+
+  <!-- Script per Drawer laterale -->
   <script>
-    // Gestione Modali Standard
-    function openModal(id) {
-      document.getElementById(id).classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal(id) {
-      document.getElementById(id).classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    function closeModalOnOverlay(e, overlay) {
-      if (e.target === overlay) {
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    }
-
-    // Gestione Drawer Menu
     function toggleDrawer(open) {
       const drawer = document.getElementById('drawer');
       if (open) {
@@ -1068,12 +958,6 @@
       if (e.target === overlay) {
         toggleDrawer(false);
       }
-    }
-    function goToSection(modalId) {
-      toggleDrawer(false);
-      setTimeout(() => {
-        openModal(modalId);
-      }, 250);
     }
   </script>
 
