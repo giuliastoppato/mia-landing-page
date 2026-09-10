@@ -81,7 +81,7 @@
       transform: scale(0.92);
     }
 
-    /* Menu a tendina laterale (Drawer Verde) */
+    /* Drawer Laterale */
     .drawer-overlay {
       position: fixed;
       inset: 0;
@@ -174,7 +174,7 @@
 
     /* Hero Banner */
     .hero-banner {
-      padding: 35px 20px 25px;
+      padding: 30px 20px 20px;
       text-align: center;
       background: linear-gradient(180deg, var(--accent-green-light) 0%, #ffffff 100%);
       display: flex;
@@ -185,9 +185,9 @@
       width: 135px;
       height: 135px;
       object-fit: contain;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       background: transparent;
-      mix-blend-mode: multiply; /* Rende trasparente ogni alone bianco residuo */
+      mix-blend-mode: multiply;
     }
     .hero-subtitle {
       font-size: 0.8rem;
@@ -214,9 +214,8 @@
       line-height: 1.45;
     }
 
-    /* Pulsante WhatsApp in grande distaccato */
     .hero-wa-container {
-      margin-top: 24px;
+      margin-top: 20px;
       width: 100%;
       max-width: 440px;
       padding: 0 16px;
@@ -237,16 +236,112 @@
       transition: transform 0.25s ease, box-shadow 0.25s ease;
       letter-spacing: 0.3px;
     }
-    .hero-wa-btn i {
-      font-size: 1.5rem;
-    }
     .hero-wa-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45);
     }
-    .hero-wa-btn:active {
-      transform: scale(0.98);
+
+    /* Carosello Servizi Orizzontale */
+    .services-carousel-section {
+      width: 100%;
+      max-width: 900px;
+      margin: 30px auto 10px;
+      padding: 0 20px;
+      position: relative;
     }
+    .carousel-section-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--primary-green);
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .carousel-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 10px 4px 18px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary-green) #e2eee6;
+      -webkit-overflow-scrolling: touch;
+    }
+    .carousel-track::-webkit-scrollbar {
+      height: 6px;
+    }
+    .carousel-track::-webkit-scrollbar-thumb {
+      background: #9eccad;
+      border-radius: 10px;
+    }
+    .service-bubble-card {
+      flex: 0 0 145px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 12px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 77, 38, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .service-bubble-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary-green);
+      box-shadow: 0 6px 18px rgba(0, 77, 38, 0.12);
+    }
+    .service-thumb-box {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 10px;
+      border: 2px solid #e1efe5;
+      background: var(--accent-green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .service-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .service-bubble-card span {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    .carousel-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      color: var(--primary-green);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+    .carousel-nav-left { left: 4px; }
+    .carousel-nav-right { right: 4px; }
 
     /* Bento Grid */
     .grid-container {
@@ -281,28 +376,23 @@
       transform: scale(0.97);
     }
 
-    /* Schede specifiche */
     .card-contatti {
       background: linear-gradient(135deg, #007a3d 0%, #00562b 100%);
       color: #ffffff !important;
       border: none;
     }
-    .card-contatti .card-number {
-      color: #b7e8c6 !important;
-    }
-    .card-contatti .card-title {
-      color: #ffffff !important;
-    }
-    .card-contatti .card-desc {
-      color: #e3f3e8 !important;
-    }
+    .card-contatti .card-number { color: #b7e8c6 !important; }
+    .card-contatti .card-title { color: #ffffff !important; }
+    .card-contatti .card-desc { color: #e3f3e8 !important; }
 
     .card-orari {
       background: linear-gradient(135deg, #eaf6ee 0%, #d8eee0 100%);
     }
 
-    .card-servizi {
-      background: linear-gradient(135deg, #f2f9f4 0%, #e3f3e8 100%);
+    /* Sezione Nutrizionista Speciale */
+    .card-nutrizione {
+      background: linear-gradient(135deg, #f7fdf9 0%, #e2f5e8 100%);
+      border: 1.5px solid #a8dfba;
     }
 
     .card-posizione {
@@ -354,7 +444,6 @@
       line-height: 1.35;
     }
 
-    /* Rating stars badge */
     .rating-badge {
       display: inline-flex;
       align-items: center;
@@ -383,7 +472,7 @@
       gap: 4px;
     }
 
-    /* Modal Pop-up */
+    /* Modali */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -431,7 +520,7 @@
     }
     .modal-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       color: var(--primary-green);
     }
     .close-btn {
@@ -454,20 +543,6 @@
       line-height: 1.6;
       color: #334d3c;
       margin-bottom: 15px;
-    }
-    .service-list-item {
-      display: flex;
-      gap: 15px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .service-list-item i {
-      font-size: 1.25rem;
-      color: var(--primary-green);
-      margin-top: 3px;
-    }
-    .service-list-item strong {
-      color: var(--text-main);
     }
     .hours-row {
       display: flex;
@@ -494,20 +569,11 @@
       font-size: 0.95rem;
       cursor: pointer;
     }
-    .btn-action-green {
-      background: var(--primary-green);
-      color: #fff;
-    }
-    .btn-action-whatsapp {
-      background: #25d366;
-      color: #fff;
-    }
-    .btn-action-maps {
-      background: #1a73e8;
-      color: #fff;
-    }
+    .btn-action-green { background: var(--primary-green); color: #fff; }
+    .btn-action-whatsapp { background: #25d366; color: #fff; }
+    .btn-action-maps { background: #1a73e8; color: #fff; }
+    .btn-action-phone { background: #00562b; color: #fff; }
 
-    /* Mappa embed */
     .map-frame-box {
       width: 100%;
       height: 240px;
@@ -516,13 +582,8 @@
       margin: 15px 0 10px;
       border: 1px solid var(--border-color);
     }
-    .map-frame-box iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+    .map-frame-box iframe { width: 100%; height: 100%; border: 0; }
 
-    /* Recensioni card styling */
     .review-quote-box {
       background: var(--accent-green-light);
       border-left: 4px solid var(--primary-green);
@@ -549,7 +610,7 @@
     </button>
   </header>
 
-  <!-- Menu a Tendina Laterale (Drawer Verde) -->
+  <!-- Menu Drawer Verde -->
   <div id="drawer" class="drawer-overlay" onclick="closeDrawerOnOverlay(event, this)">
     <div class="side-menu">
       <div class="side-menu-header">
@@ -564,7 +625,7 @@
         </li>
         <li>
           <a href="javascript:void(0)" onclick="goToSection('modal-contatti')">
-            <i class="fa-solid fa-phone"></i> Contatti &amp; Info
+            <i class="fa-solid fa-phone"></i> Contatti &amp; WhatsApp
           </a>
         </li>
         <li>
@@ -573,8 +634,8 @@
           </a>
         </li>
         <li>
-          <a href="javascript:void(0)" onclick="goToSection('modal-servizi')">
-            <i class="fa-solid fa-stethoscope"></i> I Nostri Servizi
+          <a href="javascript:void(0)" onclick="goToSection('modal-nutrizione')">
+            <i class="fa-solid fa-apple-whole"></i> Consulenza Nutrizionale
           </a>
         </li>
         <li>
@@ -596,7 +657,7 @@
     </div>
   </div>
 
-  <!-- Hero Sezione con Logo Centrale e Tasto WhatsApp Separato -->
+  <!-- Hero Sezione -->
   <div class="hero-banner">
     <img src="logo%20farmacia.png" alt="Logo Farmacia Stoppato" class="hero-brand-logo" onerror="this.style.display='none'" />
     <div class="hero-subtitle">Attività Storica dal 1886</div>
@@ -608,6 +669,76 @@
       <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20farmaco" target="_blank" class="hero-wa-btn">
         <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
       </a>
+    </div>
+  </div>
+
+  <!-- Carosello Servizi Orizzontale a Scorrimento -->
+  <div class="services-carousel-section">
+    <div class="carousel-section-title">I Nostri Servizi Sanitari</div>
+    <div class="carousel-wrapper">
+      <button class="carousel-nav-btn carousel-nav-left" onclick="scrollCarousel(-160)"><i class="fa-solid fa-chevron-left"></i></button>
+      
+      <div class="carousel-track" id="servicesTrack">
+        
+        <!-- 1. Telemedicina -->
+        <div class="service-bubble-card" onclick="openSingleService('Telemedicina', 'servizio-telemedicina.jpg', 'ECG, Holter pressorio e cardiaco con refertazione specialistica rapida.')">
+          <div class="service-thumb-box">
+            <img src="servizio-telemedicina.jpg" alt="Telemedicina" onerror="this.src='foto%20team.png'" />
+          </div>
+          <span>Telemedicina</span>
+        </div>
+
+        <!-- 2. Autoanalisi -->
+        <div class="service-bubble-card" onclick="openSingleService('Autoanalisi', 'servizio-autoanalisi.jpg', 'Misurazione immediata di Pressione, Colesterolo, Glicemia e Trigliceridi con valori certi in pochi minuti.')">
+          <div class="service-thumb-box">
+            <img src="servizio-autoanalisi.jpg" alt="Autoanalisi" onerror="this.src='foto%20team.png'" />
+          </div>
+          <span>Pressione &amp; Analisi</span>
+        </div>
+
+        <!-- 3. Consulenza Nutrizionale (Dietista) -->
+        <div class="service-bubble-card" onclick="openModal('modal-nutrizione')">
+          <div class="service-thumb-box">
+            <img src="Grafica%20Lucia.png" alt="Dietista" onerror="this.src='foto%20team.png'" />
+          </div>
+          <span>Consulenza Nutrizionale</span>
+        </div>
+
+        <!-- 4. WhatsApp Farmaci -->
+        <div class="service-bubble-card" onclick="openSingleService('Prenotazione Ricette WhatsApp', 'servizio-whatsapp.jpg', 'Invia con comodità le ricette mediche al nostro numero WhatsApp per trovare i tuoi farmaci pronti al banco senza attese.')">
+          <div class="service-thumb-box">
+            <img src="servizio-whatsapp.jpg" alt="WhatsApp" onerror="this.src='foto%20team.png'" />
+          </div>
+          <span>Ricette WhatsApp</span>
+        </div>
+
+        <!-- 5. Glovo -->
+        <div class="service-bubble-card" onclick="openSingleService('Consegna a Domicilio Glovo', 'servizio-glovo.jpg', 'Ricevi a casa o in ufficio integratori, cosmetici e prodotti da banco in tempo record con il nostro servizio Glovo.')">
+          <div class="service-thumb-box">
+            <img src="servizio-glovo.jpg" alt="Glovo" onerror="this.src='foto%20team.png'" />
+          </div>
+          <span>Consegna Glovo</span>
+        </div>
+
+        <!-- 6. Dermocosmesi -->
+        <div class="service-bubble-card" onclick="openSingleService('Dermocosmesi', 'servizio-cosmesi.jpg', 'Linee dermatologiche di alta gamma e consulenze mirate per la salute, la detersione e la cura della pelle.')">
+          <div class="service-thumb-box">
+            <img src="servizio-cosmesi.jpg" alt="Cosmesi" onerror="this.src='foto%20team.png'" />
+          </div>
+          <span>Dermocosmesi</span>
+        </div>
+
+        <!-- 7. Foratura Lobi -->
+        <div class="service-bubble-card" onclick="openSingleService('Foratura Lobi', 'servizio-lobi.jpg', 'Applicazione orecchini per adulti e bambini in ambiente igienico con capsule monouso e presidi sterili.')">
+          <div class="service-thumb-box">
+            <img src="servizio-lobi.jpg" alt="Foratura Lobi" onerror="this.src='foto%20team.png'" />
+          </div>
+          <span>Foratura Lobi</span>
+        </div>
+
+      </div>
+
+      <button class="carousel-nav-btn carousel-nav-right" onclick="scrollCarousel(160)"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
   </div>
 
@@ -632,12 +763,12 @@
       </div>
     </div>
 
-    <!-- 03: SERVIZI -->
-    <div class="bento-card card-servizi" onclick="openModal('modal-servizi')">
+    <!-- 03: CONSULENZA NUTRIZIONALE (Nuova Sezione dedicata) -->
+    <div class="bento-card card-nutrizione" onclick="openModal('modal-nutrizione')">
       <div class="card-content">
         <span class="card-number">03</span>
-        <h2 class="card-title">Servizi</h2>
-        <p class="card-desc">Telemedicina, Glovo, Cosmesi</p>
+        <h2 class="card-title">Consulenza Nutrizionale</h2>
+        <p class="card-desc">Dietista Dott.ssa Lucia Di Lorenzo</p>
       </div>
     </div>
 
@@ -655,7 +786,7 @@
       <div class="card-content">
         <span class="card-number">05</span>
         <h2 class="card-title">Chi Siamo</h2>
-        <p class="card-desc">Tradizione galenica dal 1886</p>
+        <p class="card-desc">4 generazioni al vostro servizio dal 1886</p>
       </div>
     </div>
 
@@ -673,6 +804,24 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- MODAL DINAMICO SINGOLO SERVIZIO -->
+  <div id="modal-single-service" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <h2 class="modal-title" id="singleServiceTitle">Servizio</h2>
+        <button class="close-btn" onclick="closeModal('modal-single-service')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img id="singleServiceImg" src="" style="width: 100%; max-height: 220px; object-fit: cover; border-radius: 14px; margin-bottom: 16px; border: 1px solid var(--border-color);" alt="Dettaglio Servizio" />
+        <p id="singleServiceDesc" style="font-size: 1.05rem; line-height: 1.6; color: #334d3c;"></p>
+        <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20informazioni%20sui%20vostri%20servizi" target="_blank" class="btn-action btn-action-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Richiedi informazioni su WhatsApp
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- MODAL: 01 CONTATTI -->
@@ -726,55 +875,27 @@
     </div>
   </div>
 
-  <!-- MODAL: 03 SERVIZI -->
-  <div id="modal-servizi" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
+  <!-- MODAL: 03 CONSULENZA NUTRIZIONALE -->
+  <div id="modal-nutrizione" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
       <div class="modal-header">
-        <h2 class="modal-title">I Nostri Servizi</h2>
-        <button class="close-btn" onclick="closeModal('modal-servizi')">&times;</button>
+        <h2 class="modal-title">Consulenza Nutrizionale</h2>
+        <button class="close-btn" onclick="closeModal('modal-nutrizione')">&times;</button>
       </div>
       <div class="modal-body">
-        <div class="service-list-item">
-          <i class="fa-solid fa-heart-pulse"></i>
-          <div>
-            <strong>Telemedicina</strong>
-            <p>ECG, Holter pressorio e cardiaco con refertazione specialistica rapida.</p>
-          </div>
-        </div>
-        <div class="service-list-item">
-          <i class="fa-brands fa-whatsapp"></i>
-          <div>
-            <strong>Prenotazione Farmaci WhatsApp</strong>
-            <p>Invia le ricette al 351 8267441 per il ritiro prioritario.</p>
-          </div>
-        </div>
-        <div class="service-list-item">
-          <i class="fa-solid fa-truck-fast"></i>
-          <div>
-            <strong>Consegna a domicilio Glovo</strong>
-            <p>I tuoi prodotti a casa in poco tempo.</p>
-          </div>
-        </div>
-        <div class="service-list-item">
-          <i class="fa-solid fa-spa"></i>
-          <div>
-            <strong>Dermocosmesi</strong>
-            <p>Consulenze dedicate e linee di qualità per il benessere della cute.</p>
-          </div>
-        </div>
-        <div class="service-list-item">
-          <i class="fa-solid fa-gem"></i>
-          <div>
-            <strong>Foratura Lobi</strong>
-            <p>Procedura rapida, sterile e sicura.</p>
-          </div>
-        </div>
+        <img src="Grafica%20Lucia.png" style="width: 100%; border-radius: 12px; margin-bottom: 15px; border: 1px solid var(--border-color);" alt="Dietista Lucia Di Lorenzo" onerror="this.style.display='none'" />
+        <p><strong>Consulenza nutrizionale in farmacia</strong>: verrai seguito dalla <strong>Dietista Dott.ssa Lucia Di Lorenzo</strong> con un approccio professionale e mirato.</p>
+        <p>Il servizio include uno <strong>studio e analisi delle abitudini alimentari</strong> e l'<strong>analisi corporea</strong>, in modo da adattare il percorso e renderlo perfettamente personalizzato per le tue esigenze.</p>
+        
+        <a href="tel:330671632" class="btn-action btn-action-phone">
+          <i class="fa-solid fa-phone"></i> Chiama la Dott.ssa: 330 671632
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- MODAL: 04 DOVE SIAMO (MAPPA) -->
+  <!-- MODAL: 04 DOVE SIAMO -->
   <div id="modal-posizione" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
@@ -784,8 +905,6 @@
       </div>
       <div class="modal-body">
         <p><i class="fa-solid fa-location-dot" style="color:var(--primary-green)"></i> <strong>Indirizzo:</strong> Viale Guglielmo Marconi 8, 65127 Pescara (PE)</p>
-        
-        <!-- Banner Mappa Interattivo -->
         <div class="map-frame-box">
           <iframe 
             src="https://maps.google.com/maps?q=Farmacia+Stoppato+Viale+Marconi+8+Pescara&t=&z=16&ie=UTF8&iwloc=&output=embed" 
@@ -793,7 +912,6 @@
             allowfullscreen>
           </iframe>
         </div>
-
         <a href="https://maps.google.com/?q=Farmacia+Stoppato+Viale+Marconi+8+Pescara" target="_blank" class="btn-action btn-action-maps">
           <i class="fa-solid fa-diamond-turn-right"></i> Apri su Google Maps &amp; Naviga
         </a>
@@ -801,7 +919,7 @@
     </div>
   </div>
 
-  <!-- MODAL: 05 CHI SIAMO (STORIA) -->
+  <!-- MODAL: 05 STORIA -->
   <div id="modal-storia" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
@@ -817,7 +935,7 @@
     </div>
   </div>
 
-  <!-- MODAL: 06 RECENSIONI GOOGLE -->
+  <!-- MODAL: 06 RECENSIONI -->
   <div id="modal-recensioni" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
@@ -856,7 +974,7 @@
   </div>
 
   <script>
-    // Gestione Modali
+    // Gestione Modali Standard
     function openModal(id) {
       document.getElementById(id).classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -872,7 +990,21 @@
       }
     }
 
-    // Gestione Drawer Menu Laterale
+    // Apertura Dettaglio Singolo Servizio Dinamico
+    function openSingleService(title, imgSrc, desc) {
+      document.getElementById('singleServiceTitle').innerText = title;
+      document.getElementById('singleServiceImg').src = imgSrc;
+      document.getElementById('singleServiceDesc').innerText = desc;
+      openModal('modal-single-service');
+    }
+
+    // Scroll Carosello Orizzontale
+    function scrollCarousel(distance) {
+      const track = document.getElementById('servicesTrack');
+      track.scrollBy({ left: distance, behavior: 'smooth' });
+    }
+
+    // Gestione Drawer Menu
     function toggleDrawer(open) {
       const drawer = document.getElementById('drawer');
       if (open) {
