@@ -389,7 +389,6 @@
       background: linear-gradient(135deg, #eaf6ee 0%, #d8eee0 100%);
     }
 
-    /* Sezione Nutrizionista Speciale */
     .card-nutrizione {
       background: linear-gradient(135deg, #f7fdf9 0%, #e2f5e8 100%);
       border: 1.5px solid #a8dfba;
@@ -681,57 +680,57 @@
       <div class="carousel-track" id="servicesTrack">
         
         <!-- 1. Telemedicina -->
-        <div class="service-bubble-card" onclick="openSingleService('Telemedicina', 'servizio-telemedicina.jpg', 'ECG, Holter pressorio e cardiaco con refertazione specialistica rapida.')">
+        <div class="service-bubble-card" onclick="openSingleService('Telemedicina', 'telemedicina.png', 'ECG, Holter pressorio e cardiaco con refertazione specialistica rapida.')">
           <div class="service-thumb-box">
-            <img src="servizio-telemedicina.jpg" alt="Telemedicina" onerror="this.src='foto%20team.png'" />
+            <img src="telemedicina.png" alt="Telemedicina" />
           </div>
           <span>Telemedicina</span>
         </div>
 
-        <!-- 2. Autoanalisi -->
-        <div class="service-bubble-card" onclick="openSingleService('Autoanalisi', 'servizio-autoanalisi.jpg', 'Misurazione immediata di Pressione, Colesterolo, Glicemia e Trigliceridi con valori certi in pochi minuti.')">
+        <!-- 2. Autoanalisi (Pressione & Analisi) -->
+        <div class="service-bubble-card" onclick="openSingleService('Autoanalisi', 'pressione.png', 'Misurazione immediata di Pressione, Colesterolo, Glicemia e Trigliceridi con valori certi in pochi minuti.')">
           <div class="service-thumb-box">
-            <img src="servizio-autoanalisi.jpg" alt="Autoanalisi" onerror="this.src='foto%20team.png'" />
+            <img src="pressione.png" alt="Pressione e Analisi" />
           </div>
           <span>Pressione &amp; Analisi</span>
         </div>
 
-        <!-- 3. Consulenza Nutrizionale (Dietista) -->
+        <!-- 3. Consulenza Nutrizionale -->
         <div class="service-bubble-card" onclick="openModal('modal-nutrizione')">
           <div class="service-thumb-box">
-            <img src="Grafica%20Lucia.png" alt="Dietista" onerror="this.src='foto%20team.png'" />
+            <img src="nutrizionista.png" alt="Nutrizionista" />
           </div>
           <span>Consulenza Nutrizionale</span>
         </div>
 
-        <!-- 4. WhatsApp Farmaci -->
-        <div class="service-bubble-card" onclick="openSingleService('Prenotazione Ricette WhatsApp', 'servizio-whatsapp.jpg', 'Invia con comodità le ricette mediche al nostro numero WhatsApp per trovare i tuoi farmaci pronti al banco senza attese.')">
+        <!-- 4. Prenotazione Ricette WhatsApp -->
+        <div class="service-bubble-card" onclick="openSingleService('Prenotazione Ricette WhatsApp', 'prenotazione%20ricette.png', 'Invia con comodità le ricette mediche al nostro numero WhatsApp per trovare i tuoi farmaci pronti al banco senza attese.')">
           <div class="service-thumb-box">
-            <img src="servizio-whatsapp.jpg" alt="WhatsApp" onerror="this.src='foto%20team.png'" />
+            <img src="prenotazione%20ricette.png" alt="Prenotazione Ricette" />
           </div>
           <span>Ricette WhatsApp</span>
         </div>
 
         <!-- 5. Glovo -->
-        <div class="service-bubble-card" onclick="openSingleService('Consegna a Domicilio Glovo', 'servizio-glovo.jpg', 'Ricevi a casa o in ufficio integratori, cosmetici e prodotti da banco in tempo record con il nostro servizio Glovo.')">
+        <div class="service-bubble-card" onclick="openSingleService('Consegna a Domicilio Glovo', 'glovo.png', 'Ricevi a casa o in ufficio integratori, cosmetici e prodotti da banco in tempo record con il nostro servizio Glovo.')">
           <div class="service-thumb-box">
-            <img src="servizio-glovo.jpg" alt="Glovo" onerror="this.src='foto%20team.png'" />
+            <img src="glovo.png" alt="Glovo" />
           </div>
           <span>Consegna Glovo</span>
         </div>
 
         <!-- 6. Dermocosmesi -->
-        <div class="service-bubble-card" onclick="openSingleService('Dermocosmesi', 'servizio-cosmesi.jpg', 'Linee dermatologiche di alta gamma e consulenze mirate per la salute, la detersione e la cura della pelle.')">
+        <div class="service-bubble-card" onclick="openSingleService('Dermocosmesi', 'dermocosmesi.png', 'Linee dermatologiche di alta gamma e consulenze mirate per la salute, la detersione e la cura della pelle.')">
           <div class="service-thumb-box">
-            <img src="servizio-cosmesi.jpg" alt="Cosmesi" onerror="this.src='foto%20team.png'" />
+            <img src="dermocosmesi.png" alt="Dermocosmesi" />
           </div>
           <span>Dermocosmesi</span>
         </div>
 
         <!-- 7. Foratura Lobi -->
-        <div class="service-bubble-card" onclick="openSingleService('Foratura Lobi', 'servizio-lobi.jpg', 'Applicazione orecchini per adulti e bambini in ambiente igienico con capsule monouso e presidi sterili.')">
+        <div class="service-bubble-card" onclick="openSingleService('Foratura Lobi', 'foratura%20lobi.png', 'Applicazione orecchini per adulti e bambini in ambiente igienico con capsule monouso e presidi sterili.')">
           <div class="service-thumb-box">
-            <img src="servizio-lobi.jpg" alt="Foratura Lobi" onerror="this.src='foto%20team.png'" />
+            <img src="foratura%20lobi.png" alt="Foratura Lobi" />
           </div>
           <span>Foratura Lobi</span>
         </div>
@@ -763,7 +762,7 @@
       </div>
     </div>
 
-    <!-- 03: CONSULENZA NUTRIZIONALE (Nuova Sezione dedicata) -->
+    <!-- 03: CONSULENZA NUTRIZIONALE -->
     <div class="bento-card card-nutrizione" onclick="openModal('modal-nutrizione')">
       <div class="card-content">
         <span class="card-number">03</span>
@@ -884,7 +883,7 @@
         <button class="close-btn" onclick="closeModal('modal-nutrizione')">&times;</button>
       </div>
       <div class="modal-body">
-        <img src="Grafica%20Lucia.png" style="width: 100%; border-radius: 12px; margin-bottom: 15px; border: 1px solid var(--border-color);" alt="Dietista Lucia Di Lorenzo" onerror="this.style.display='none'" />
+        <img src="nutrizionista.png" style="width: 100%; border-radius: 12px; margin-bottom: 15px; border: 1px solid var(--border-color); object-fit: cover; max-height: 250px;" alt="Dietista Lucia Di Lorenzo" onerror="this.style.display='none'" />
         <p><strong>Consulenza nutrizionale in farmacia</strong>: verrai seguito dalla <strong>Dietista Dott.ssa Lucia Di Lorenzo</strong> con un approccio professionale e mirato.</p>
         <p>Il servizio include uno <strong>studio e analisi delle abitudini alimentari</strong> e l'<strong>analisi corporea</strong>, in modo da adattare il percorso e renderlo perfettamente personalizzato per le tue esigenze.</p>
         
