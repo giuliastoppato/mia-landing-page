@@ -299,10 +299,106 @@
       color: var(--primary-dark);
     }
 
+    /* GALLERIA CAROSELLO FOTO TEAM & FARMACIA */
+    .gallery-carousel-section {
+      max-width: 900px;
+      margin: 35px auto 30px;
+      padding: 0 20px;
+      width: 100%;
+    }
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .gallery-subtitle {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary-green);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .gallery-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.85rem;
+      color: var(--primary-dark);
+    }
+    .gallery-carousel-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .gallery-carousel-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 10px 4px 18px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary-green) #e2eee6;
+      width: 100%;
+    }
+    .gallery-carousel-track::-webkit-scrollbar {
+      height: 6px;
+    }
+    .gallery-carousel-track::-webkit-scrollbar-thumb {
+      background: #9eccad;
+      border-radius: 10px;
+    }
+    .gallery-slide-item {
+      flex: 0 0 280px;
+      height: 210px;
+      scroll-snap-align: start;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 77, 38, 0.08);
+      border: 1px solid var(--border-color);
+      background: #fbfdfc;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .gallery-slide-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 77, 38, 0.14);
+    }
+    .gallery-slide-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-nav-btn {
+      position: absolute;
+      top: calc(50% - 9px);
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      color: var(--primary-green);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      z-index: 10;
+      transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    }
+    .gallery-nav-btn:hover {
+      background: var(--primary-green);
+      color: #ffffff;
+      transform: translateY(-50%) scale(1.06);
+    }
+    .gallery-prev-btn { left: -12px; }
+    .gallery-next-btn { right: -12px; }
+
     /* SEZIONE SERVIZI VERTICALE */
     .services-vertical-section {
       max-width: 900px;
-      margin: 30px auto 40px;
+      margin: 25px auto 40px;
       padding: 0 20px;
       width: 100%;
     }
@@ -597,6 +693,13 @@
       .editorial-story-title {
         font-size: 1.55rem;
       }
+      .gallery-slide-item {
+        flex: 0 0 230px;
+        height: 170px;
+        border-radius: 14px;
+      }
+      .gallery-prev-btn { left: -6px; }
+      .gallery-next-btn { right: -6px; }
       .service-row-item {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -645,6 +748,11 @@
         <li>
           <a href="#sezione-storia" onclick="toggleDrawer(false)">
             <i class="fa-solid fa-landmark"></i> Chi Siamo (Storia)
+          </a>
+        </li>
+        <li>
+          <a href="#sezione-galleria" onclick="toggleDrawer(false)">
+            <i class="fa-solid fa-images"></i> La Nostra Farmacia
           </a>
         </li>
         <li>
@@ -707,6 +815,51 @@
           La farmacia è nel nostro DNA. Dal bisnonno <strong>Michele</strong>, passando per nonna <strong>Rosa</strong> e papà <strong>Arturo</strong>, siamo giunti fino ad oggi per proseguire questa meravigliosa storia insieme a voi.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- GALLERIA FOTOGRAFICA CAROSELLO (FARMACIA & TEAM) -->
+  <section class="gallery-carousel-section" id="sezione-galleria">
+    <div class="gallery-header">
+      <div class="gallery-subtitle">I Nostri Spazi &amp; Il Nostro Team</div>
+      <h2 class="gallery-title">La Nostra Farmacia</h2>
+    </div>
+
+    <div class="gallery-carousel-container">
+      <button class="gallery-nav-btn gallery-prev-btn" onclick="scrollGallery(-1)" aria-label="Foto precedente">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="gallery-carousel-track" id="galleryTrack">
+        <div class="gallery-slide-item">
+          <img src="foto%201.png" alt="Farmacia Stoppato - Foto 1" loading="lazy" />
+        </div>
+        <div class="gallery-slide-item">
+          <img src="foto%202.png" alt="Farmacia Stoppato - Foto 2" loading="lazy" />
+        </div>
+        <div class="gallery-slide-item">
+          <img src="foto%203.png" alt="Farmacia Stoppato - Foto 3" loading="lazy" />
+        </div>
+        <div class="gallery-slide-item">
+          <img src="foto%204.png" alt="Farmacia Stoppato - Foto 4" loading="lazy" />
+        </div>
+        <div class="gallery-slide-item">
+          <img src="foto%205.png" alt="Farmacia Stoppato - Foto 5" loading="lazy" />
+        </div>
+        <div class="gallery-slide-item">
+          <img src="foto%206.png" alt="Farmacia Stoppato - Foto 6" loading="lazy" />
+        </div>
+        <div class="gallery-slide-item">
+          <img src="foto%207.png" alt="Farmacia Stoppato - Foto 7" loading="lazy" />
+        </div>
+        <div class="gallery-slide-item">
+          <img src="foto%208.png" alt="Farmacia Stoppato - Foto 8" loading="lazy" />
+        </div>
+      </div>
+
+      <button class="gallery-nav-btn gallery-next-btn" onclick="scrollGallery(1)" aria-label="Foto successiva">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
   </section>
 
@@ -942,8 +1095,14 @@
 
   </section>
 
-  <!-- Script per Drawer laterale -->
+  <!-- Script per Carosello e Drawer -->
   <script>
+    function scrollGallery(direction) {
+      const track = document.getElementById('galleryTrack');
+      const step = 296; // 280px larghezza card + 16px gap
+      track.scrollBy({ left: direction * step, behavior: 'smooth' });
+    }
+
     function toggleDrawer(open) {
       const drawer = document.getElementById('drawer');
       if (open) {
@@ -954,6 +1113,7 @@
         document.body.style.overflow = '';
       }
     }
+
     function closeDrawerOnOverlay(e, overlay) {
       if (e.target === overlay) {
         toggleDrawer(false);
