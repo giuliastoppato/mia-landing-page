@@ -323,7 +323,7 @@
     .gallery-prev-btn { left: 4px; }
     .gallery-next-btn { right: 4px; }
 
-    /* SEZIONE SERVIZI VERTICALE: IMMAGINI MAI TAGLIATE */
+    /* SEZIONE SERVIZI VERTICALE */
     .services-vertical-section {
       max-width: 900px;
       margin: 25px auto 40px;
@@ -350,43 +350,45 @@
     .services-list-vertical {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 20px;
     }
     .service-row-item {
       background: #ffffff;
       border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 16px;
+      border-radius: 18px;
+      padding: 18px;
       display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 20px;
+      grid-template-columns: 210px 1fr;
+      gap: 22px;
       align-items: center;
-      box-shadow: 0 4px 12px rgba(0, 77, 38, 0.04);
+      box-shadow: 0 4px 14px rgba(0, 77, 38, 0.04);
     }
     
-    /* Box immagine: mantiene la foto intera e centrata */
+    /* Box immagine orizzontale pieno da bordo a bordo */
     .service-row-imgbox {
       width: 100%;
-      height: 130px;
-      background: #f4f8f5;
-      border-radius: 12px;
-      border: 1px solid #e1efe5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px;
+      aspect-ratio: 16 / 10;
+      border-radius: 14px;
       overflow: hidden;
+      background: #eef5f0;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
     .service-row-imgbox img {
-      max-width: 100% !important;
-      max-height: 100% !important;
-      width: auto !important;
-      height: auto !important;
-      object-fit: contain !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
       display: block;
-      margin: auto;
-      border-radius: 8px;
     }
+
+    /* Punti focali calibrati per evitare tagli indesiderati */
+    .img-telemedicina { object-position: center 30% !important; }
+    .img-pressione { object-position: center center !important; }
+    .img-nutrizionista { object-position: center top !important; } /* non taglia la testa */
+    .img-ricette { object-position: center center !important; }
+    .img-glovo { object-position: center top !important; } /* mostra zaino e logo */
+    .img-dermocosmesi { object-position: center center !important; }
+    .img-lobi { object-position: center 25% !important; } /* inquadra bene l'orecchio */
 
     .service-row-title {
       font-family: 'Playfair Display', serif;
@@ -396,7 +398,7 @@
     }
     .service-row-desc {
       font-size: 0.92rem;
-      line-height: 1.5;
+      line-height: 1.55;
       color: var(--text-muted);
       margin-bottom: 12px;
     }
@@ -628,15 +630,16 @@
         border-radius: 14px;
       }
 
-      /* Servizi su mobile: riquadro foto proporzionato e centrato */
+      /* Card servizi su mobile: riquadro orizzontale a tutta larghezza con ratio 16:9 */
       .service-row-item {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 14px;
         padding: 14px;
       }
       .service-row-imgbox {
-        height: 140px;
         width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
       }
       .service-row-title {
         font-size: 1.25rem;
@@ -758,7 +761,7 @@
       <!-- 1. Telemedicina -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
-          <img src="telemedicina.png" alt="Telemedicina" />
+          <img src="telemedicina.png" alt="Telemedicina" class="img-telemedicina" />
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Telemedicina</h3>
@@ -772,7 +775,7 @@
       <!-- 2. Autoanalisi -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
-          <img src="pressione.png" alt="Pressione e Analisi" />
+          <img src="pressione.png" alt="Pressione e Analisi" class="img-pressione" />
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Misurazione Pressione &amp; Analisi Sangue</h3>
@@ -786,7 +789,7 @@
       <!-- 3. Nutrizionista -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
-          <img src="nutrizionista.png" alt="Nutrizionista" />
+          <img src="nutrizionista.png" alt="Nutrizionista" class="img-nutrizionista" />
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Consulenza Nutrizionale</h3>
@@ -800,7 +803,7 @@
       <!-- 4. Prenotazione Ricette WhatsApp -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
-          <img src="prenotazione%20ricette.png" alt="Prenotazione Ricette" />
+          <img src="prenotazione%20ricette.png" alt="Prenotazione Ricette" class="img-ricette" />
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Prenotazione Ricette WhatsApp</h3>
@@ -814,7 +817,7 @@
       <!-- 5. Glovo -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
-          <img src="glovo.png" alt="Glovo" />
+          <img src="glovo.png" alt="Glovo" class="img-glovo" />
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Consegna a Domicilio Glovo</h3>
@@ -828,7 +831,7 @@
       <!-- 6. Dermocosmesi -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
-          <img src="dermocosmesi.png" alt="Dermocosmesi" />
+          <img src="dermocosmesi.png" alt="Dermocosmesi" class="img-dermocosmesi" />
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Dermocosmesi</h3>
@@ -842,7 +845,7 @@
       <!-- 7. Foratura Lobi -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
-          <img src="foratura%20lobi.png" alt="Foratura Lobi" />
+          <img src="foratura%20lobi.png" alt="Foratura Lobi" class="img-lobi" />
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Foratura Lobi</h3>
