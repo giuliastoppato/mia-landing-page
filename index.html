@@ -306,7 +306,7 @@
       overflow: hidden;
       margin-bottom: 10px;
       border: 2px solid #e1efe5;
-      background: var(--accent-green-light);
+      background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -492,10 +492,10 @@
       background: #ffffff;
       color: var(--text-main);
       width: 100%;
-      max-width: 600px;
+      max-width: 580px;
       margin: 0 auto;
       border-radius: 24px 24px 0 0;
-      padding: 30px 24px 40px;
+      padding: 26px 22px 36px;
       max-height: 85vh;
       overflow-y: auto;
       transform: translateY(100%);
@@ -509,17 +509,17 @@
       height: 4px;
       background: #cbe3d3;
       border-radius: 10px;
-      margin: -10px auto 20px;
+      margin: -6px auto 16px;
     }
     .modal-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     .modal-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.7rem;
+      font-size: 1.65rem;
       color: var(--primary-green);
     }
     .close-btn {
@@ -537,11 +537,34 @@
       font-weight: bold;
     }
 
+    /* Immagini Modali Ridimensionate & Non Tagliate */
+    .modal-img-container {
+      width: 100%;
+      background: #fbfdfc;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      padding: 8px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-img-contained {
+      width: auto;
+      max-width: 100%;
+      max-height: 240px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
     .modal-body p {
       font-size: 0.95rem;
       line-height: 1.6;
       color: #334d3c;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
     .hours-row {
       display: flex;
@@ -688,7 +711,7 @@
         </div>
 
         <!-- 2. Autoanalisi (Pressione & Analisi) -->
-        <div class="service-bubble-card" onclick="openSingleService('Autoanalisi', 'pressione.png', 'Misurazione immediata di Pressione, Colesterolo, Glicemia e Trigliceridi con valori certi in pochi minuti.')">
+        <div class="service-bubble-card" onclick="openSingleService('Pressione & Analisi', 'pressione.png', 'Misurazione immediata di Pressione, Colesterolo, Glicemia e Trigliceridi con valori certi in pochi minuti.')">
           <div class="service-thumb-box">
             <img src="pressione.png" alt="Pressione e Analisi" />
           </div>
@@ -805,7 +828,7 @@
 
   </div>
 
-  <!-- MODAL DINAMICO SINGOLO SERVIZIO -->
+  <!-- MODAL DINAMICO SINGOLO SERVIZIO (FOTO RIDIMENSIONATA E MAI TAGLIATA) -->
   <div id="modal-single-service" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
@@ -814,8 +837,10 @@
         <button class="close-btn" onclick="closeModal('modal-single-service')">&times;</button>
       </div>
       <div class="modal-body">
-        <img id="singleServiceImg" src="" style="width: 100%; max-height: 220px; object-fit: cover; border-radius: 14px; margin-bottom: 16px; border: 1px solid var(--border-color);" alt="Dettaglio Servizio" />
-        <p id="singleServiceDesc" style="font-size: 1.05rem; line-height: 1.6; color: #334d3c;"></p>
+        <div class="modal-img-container">
+          <img id="singleServiceImg" class="modal-img-contained" src="" alt="Dettaglio Servizio" />
+        </div>
+        <p id="singleServiceDesc" style="font-size: 1rem; line-height: 1.6; color: #334d3c;"></p>
         <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20informazioni%20sui%20vostri%20servizi" target="_blank" class="btn-action btn-action-whatsapp">
           <i class="fa-brands fa-whatsapp"></i> Richiedi informazioni su WhatsApp
         </a>
@@ -874,7 +899,7 @@
     </div>
   </div>
 
-  <!-- MODAL: 03 CONSULENZA NUTRIZIONALE -->
+  <!-- MODAL: 03 CONSULENZA NUTRIZIONALE (FOTO RIDIMENSIONATA E INTERA) -->
   <div id="modal-nutrizione" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
@@ -883,7 +908,9 @@
         <button class="close-btn" onclick="closeModal('modal-nutrizione')">&times;</button>
       </div>
       <div class="modal-body">
-        <img src="nutrizionista.png" style="width: 100%; border-radius: 12px; margin-bottom: 15px; border: 1px solid var(--border-color); object-fit: cover; max-height: 250px;" alt="Dietista Lucia Di Lorenzo" onerror="this.style.display='none'" />
+        <div class="modal-img-container">
+          <img src="nutrizionista.png" class="modal-img-contained" alt="Dietista Lucia Di Lorenzo" onerror="this.style.display='none'" />
+        </div>
         <p><strong>Consulenza nutrizionale in farmacia</strong>: verrai seguito dalla <strong>Dietista Dott.ssa Lucia Di Lorenzo</strong> con un approccio professionale e mirato.</p>
         <p>Il servizio include uno <strong>studio e analisi delle abitudini alimentari</strong> e l'<strong>analisi corporea</strong>, in modo da adattare il percorso e renderlo perfettamente personalizzato per le tue esigenze.</p>
         
@@ -918,7 +945,7 @@
     </div>
   </div>
 
-  <!-- MODAL: 05 STORIA -->
+  <!-- MODAL: 05 STORIA (CHI SIAMO) -->
   <div id="modal-storia" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
@@ -927,7 +954,9 @@
         <button class="close-btn" onclick="closeModal('modal-storia')">&times;</button>
       </div>
       <div class="modal-body">
-        <img src="foto%20vintage.jpg" style="width: 100%; border-radius: 12px; margin-bottom: 15px;" alt="Farmacia Storica" />
+        <div class="modal-img-container">
+          <img src="foto%20vintage.jpg" class="modal-img-contained" alt="Farmacia Storica" />
+        </div>
         <p>Da oltre un secolo al servizio della vostra salute e del vostro benessere. <strong>Quattro generazioni</strong> della famiglia con competenza, passione e professionalità.</p>
         <p>La farmacia è nel nostro DNA. Dal bisnonno <strong>Michele</strong>, passando per nonna <strong>Rosa</strong> e papà <strong>Arturo</strong>, siamo giunti fino ad oggi per proseguire questa meravigliosa storia insieme a voi.</p>
       </div>
@@ -943,16 +972,16 @@
         <button class="close-btn" onclick="closeModal('modal-recensioni')">&times;</button>
       </div>
       <div class="modal-body">
-        <div style="text-align: center; padding: 15px 0 20px;">
-          <div style="font-size: 3rem; font-weight: 700; color: #202124; line-height: 1;">4.7</div>
-          <div style="color: var(--gold-star); font-size: 1.25rem; margin: 8px 0;">
+        <div style="text-align: center; padding: 10px 0 16px;">
+          <div style="font-size: 2.8rem; font-weight: 700; color: #202124; line-height: 1;">4.7</div>
+          <div style="color: var(--gold-star); font-size: 1.2rem; margin: 8px 0;">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star-half-stroke"></i>
           </div>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0;">Valutazione media basata sulle recensioni verificate dei clienti</p>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0;">Valutazione media basata sulle recensioni verificate dei clienti</p>
         </div>
 
         <div class="review-quote-box">
