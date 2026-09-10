@@ -32,6 +32,10 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: #ffffff;
@@ -41,9 +45,9 @@
       flex-direction: column;
     }
 
-    /* Header */
+    /* Header & Navigazione Orizzontale Superiore */
     header {
-      padding: 14px 20px;
+      padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -53,6 +57,7 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(10px);
+      gap: 20px;
     }
     .brand-logo-text {
       text-decoration: none;
@@ -62,114 +67,47 @@
       letter-spacing: 0.8px;
       text-transform: uppercase;
       font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    /* Tasto Hamburger */
-    .menu-toggle-btn {
-      background: none;
-      border: none;
-      font-size: 1.6rem;
-      color: var(--primary-green);
-      cursor: pointer;
-      padding: 4px 8px;
+    /* Menu di Navigazione in alto */
+    .top-nav {
       display: flex;
       align-items: center;
-      justify-content: center;
-      transition: transform 0.2s ease;
-    }
-    .menu-toggle-btn:active {
-      transform: scale(0.92);
-    }
-
-    /* Drawer Laterale Verde */
-    .drawer-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 30, 15, 0.45);
-      backdrop-filter: blur(4px);
-      z-index: 200;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .drawer-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .side-menu {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 82%;
-      max-width: 320px;
-      height: 100vh;
-      background: linear-gradient(180deg, #007a3d 0%, #004d26 100%);
-      color: #ffffff;
-      z-index: 210;
-      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.25);
-      padding: 28px 24px;
-      display: flex;
-      flex-direction: column;
-      transform: translateX(100%);
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      overflow-y: auto;
-    }
-    .drawer-overlay.active .side-menu {
-      transform: translateX(0);
-    }
-    .side-menu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-      margin-bottom: 20px;
-    }
-    .side-menu-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      letter-spacing: 0.5px;
-      font-weight: 700;
-    }
-    .side-menu-close {
-      background: rgba(255, 255, 255, 0.12);
-      border: none;
-      color: #ffffff;
-      font-size: 1.3rem;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .side-menu-nav {
+      gap: 8px;
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none; /* Nasconde scrollbar su Firefox */
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 0;
     }
-    .side-menu-nav a {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 13px 15px;
-      color: #ffffff;
+    .top-nav::-webkit-scrollbar {
+      display: none; /* Nasconde scrollbar su Chrome/Safari */
+    }
+    .top-nav li {
+      flex-shrink: 0;
+    }
+    .top-nav a {
       text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      transition: background 0.2s ease, transform 0.2s ease;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: color 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+      display: inline-block;
     }
-    .side-menu-nav a i {
-      width: 20px;
-      color: #a3f1c1;
+    .top-nav a:hover,
+    .top-nav a:active {
+      color: var(--primary-green);
+      background: var(--accent-green-light);
     }
-    .side-menu-nav a:hover, .side-menu-nav a:active {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateX(4px);
+
+    /* Margine di compensazione per lo scorrimento con header sticky */
+    section {
+      scroll-margin-top: 75px;
     }
 
     /* Hero Banner */
@@ -682,6 +620,17 @@
     }
 
     @media (max-width: 768px) {
+      header {
+        padding: 10px 14px;
+        gap: 12px;
+      }
+      .brand-logo-text {
+        font-size: 1.05rem;
+      }
+      .top-nav a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+      }
       .editorial-story-card {
         grid-template-columns: 1fr;
         gap: 18px;
@@ -722,67 +671,24 @@
     }
   </style>
 </head>
-<body>
+<body id="home">
 
-  <!-- Header -->
+  <!-- Header con Logo a sinistra e Menu Sezioni a destra -->
   <header>
-    <a href="#" class="brand-logo-text">Farmacia Stoppato</a>
-    <button class="menu-toggle-btn" onclick="toggleDrawer(true)" aria-label="Apri Menu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </header>
-
-  <!-- Menu Drawer Verde -->
-  <div id="drawer" class="drawer-overlay" onclick="closeDrawerOnOverlay(event, this)">
-    <div class="side-menu">
-      <div class="side-menu-header">
-        <span class="side-menu-title">Menu Navigazione</span>
-        <button class="side-menu-close" onclick="toggleDrawer(false)">&times;</button>
-      </div>
-      <ul class="side-menu-nav">
-        <li>
-          <a href="#" onclick="toggleDrawer(false); window.scrollTo({top: 0, behavior: 'smooth'});">
-            <i class="fa-solid fa-house"></i> Home
-          </a>
-        </li>
-        <li>
-          <a href="#sezione-storia" onclick="toggleDrawer(false)">
-            <i class="fa-solid fa-landmark"></i> Chi Siamo (Storia)
-          </a>
-        </li>
-        <li>
-          <a href="#sezione-galleria" onclick="toggleDrawer(false)">
-            <i class="fa-solid fa-images"></i> La Nostra Farmacia
-          </a>
-        </li>
-        <li>
-          <a href="#sezione-servizi" onclick="toggleDrawer(false)">
-            <i class="fa-solid fa-stethoscope"></i> I Nostri Servizi
-          </a>
-        </li>
-        <li>
-          <a href="#sezione-contatti" onclick="toggleDrawer(false)">
-            <i class="fa-solid fa-phone"></i> Contatti
-          </a>
-        </li>
-        <li>
-          <a href="#sezione-orari" onclick="toggleDrawer(false)">
-            <i class="fa-solid fa-clock"></i> Orari di Apertura
-          </a>
-        </li>
-        <li>
-          <a href="#sezione-mappa" onclick="toggleDrawer(false)">
-            <i class="fa-solid fa-map-location-dot"></i> Dove Siamo (Mappa)
-          </a>
-        </li>
-        <li>
-          <a href="#sezione-recensioni" onclick="toggleDrawer(false)">
-            <i class="fa-solid fa-star"></i> Valutazione Clienti (4.7)
-          </a>
-        </li>
+    <a href="#home" class="brand-logo-text">Farmacia Stoppato</a>
+    
+    <nav>
+      <ul class="top-nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sezione-storia">Chi Siamo</a></li>
+        <li><a href="#sezione-galleria">Galleria</a></li>
+        <li><a href="#sezione-servizi">Servizi</a></li>
+        <li><a href="#sezione-contatti">Contatti</a></li>
+        <li><a href="#sezione-orari">Orari</a></li>
+        <li><a href="#sezione-mappa">Dove Siamo</a></li>
       </ul>
-    </div>
-  </div>
+    </nav>
+  </header>
 
   <!-- Hero Sezione -->
   <div class="hero-banner">
@@ -835,7 +741,6 @@
           <img src="foto%201.png" alt="Farmacia Stoppato - Foto 1" loading="lazy" />
         </div>
         <div class="gallery-slide-item">
-          <!-- Inquadratura ancorata in alto per mostrare bene la scritta FARMACIA STOPPATO -->
           <img src="foto%202.png" alt="Farmacia Stoppato - Foto 2" style="object-position: center top;" loading="lazy" />
         </div>
         <div class="gallery-slide-item">
@@ -848,7 +753,6 @@
           <img src="foto%205.png" alt="Farmacia Stoppato - Foto 5" loading="lazy" />
         </div>
         <div class="gallery-slide-item">
-          <!-- Inquadratura ancorata in basso per mostrare il logo sulla maglietta -->
           <img src="foto%206.png" alt="Farmacia Stoppato - Foto 6" style="object-position: center bottom;" loading="lazy" />
         </div>
         <div class="gallery-slide-item">
@@ -1033,10 +937,10 @@
   </section>
 
   <!-- SEZIONE MAPPA (SINISTRA) E RECENSIONI (DESTRA) SENZA RIQUADRI -->
-  <section class="location-reviews-row">
+  <section class="location-reviews-row" id="sezione-mappa">
     
     <!-- A Sinistra: Dove Siamo (Mappa Interattiva) -->
-    <div class="open-subblock" id="sezione-mappa">
+    <div class="open-subblock">
       <h3 class="open-subblock-title">Dove Siamo</h3>
       <p class="open-subblock-desc"><i class="fa-solid fa-location-dot" style="color:var(--primary-green);"></i> Viale Guglielmo Marconi 8, 65127 Pescara (PE)</p>
       
@@ -1093,29 +997,12 @@
 
   </section>
 
-  <!-- Script per Carosello e Drawer -->
+  <!-- Script per Carosello Galleria -->
   <script>
     function scrollGallery(direction) {
       const track = document.getElementById('galleryTrack');
       const step = 296; // 280px larghezza card + 16px gap
       track.scrollBy({ left: direction * step, behavior: 'smooth' });
-    }
-
-    function toggleDrawer(open) {
-      const drawer = document.getElementById('drawer');
-      if (open) {
-        drawer.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      } else {
-        drawer.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    }
-
-    function closeDrawerOnOverlay(e, overlay) {
-      if (e.target === overlay) {
-        toggleDrawer(false);
-      }
     }
   </script>
 
