@@ -343,11 +343,88 @@
     .carousel-nav-left { left: 4px; }
     .carousel-nav-right { right: 4px; }
 
+    /* NUOVA SEZIONE EDITORIALE CHI SIAMO (STILE UNIFARCO) */
+    .editorial-story-section {
+      max-width: 900px;
+      margin: 35px auto 25px;
+      padding: 0 20px;
+      width: 100%;
+    }
+    .editorial-story-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 6px 20px rgba(0, 77, 38, 0.05);
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 30px;
+      align-items: center;
+    }
+    .editorial-story-imgbox {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      background: #f4f8f5;
+    }
+    .editorial-story-imgbox img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .editorial-story-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .editorial-story-badge {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary-green);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .editorial-story-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.85rem;
+      line-height: 1.25;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+    }
+    .editorial-story-text {
+      font-size: 0.94rem;
+      line-height: 1.65;
+      color: #3b5042;
+      margin-bottom: 12px;
+    }
+    .editorial-story-text strong {
+      color: var(--primary-dark);
+    }
+
+    @media (max-width: 768px) {
+      .editorial-story-card {
+        grid-template-columns: 1fr;
+        padding: 22px 18px;
+        gap: 20px;
+      }
+      .editorial-story-imgbox {
+        min-height: 220px;
+        max-height: 260px;
+      }
+      .editorial-story-title {
+        font-size: 1.55rem;
+      }
+    }
+
     /* Bento Grid */
     .grid-container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 15px 20px 40px;
+      padding: 10px 20px 40px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
@@ -396,18 +473,6 @@
 
     .card-posizione {
       background: linear-gradient(135deg, #ffffff 0%, #f6faf7 100%);
-    }
-
-    .card-storia {
-      background-image: url('foto%20vintage.jpg');
-      min-height: 180px;
-    }
-    .card-storia::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.94) 75%);
-      z-index: 1;
     }
 
     .card-recensioni {
@@ -537,7 +602,6 @@
       font-weight: bold;
     }
 
-    /* Immagini Modali Ridimensionate & Non Tagliate */
     .modal-img-container {
       width: 100%;
       background: #fbfdfc;
@@ -666,7 +730,7 @@
           </a>
         </li>
         <li>
-          <a href="javascript:void(0)" onclick="goToSection('modal-storia')">
+          <a href="#sezione-storia" onclick="toggleDrawer(false)">
             <i class="fa-solid fa-landmark"></i> Chi Siamo (Storia)
           </a>
         </li>
@@ -764,7 +828,26 @@
     </div>
   </div>
 
-  <!-- Bento Grid -->
+  <!-- SEZIONE EDITORIALE CHI SIAMO (FOTO A SINISTRA E TESTO A DESTRA) -->
+  <section class="editorial-story-section" id="sezione-storia">
+    <div class="editorial-story-card">
+      <div class="editorial-story-imgbox">
+        <img src="foto%20vintage.png" alt="Storia Farmacia Stoppato 1886" onerror="this.src='foto%20vintage.jpg'" />
+      </div>
+      <div class="editorial-story-content">
+        <div class="editorial-story-badge">4 generazioni al vostro servizio dal 1886</div>
+        <h2 class="editorial-story-title">CHI SIAMO</h2>
+        <p class="editorial-story-text">
+          Da oltre un secolo al servizio della vostra salute e del vostro benessere. <strong>Quattro generazioni</strong> della famiglia con competenza, passione e professionalità.
+        </p>
+        <p class="editorial-story-text">
+          La farmacia è nel nostro DNA. Dal bisnonno <strong>Michele</strong>, passando per nonna <strong>Rosa</strong> e papà <strong>Arturo</strong>, siamo giunti fino ad oggi per proseguire questa meravigliosa storia insieme a voi.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid (Senza riquadro storia) -->
   <div class="grid-container">
 
     <!-- 01: CONTATTI -->
@@ -803,19 +886,10 @@
       </div>
     </div>
 
-    <!-- 05: CHI SIAMO (STORIA) -->
-    <div class="bento-card card-storia" onclick="openModal('modal-storia')">
-      <div class="card-content">
-        <span class="card-number">05</span>
-        <h2 class="card-title">Chi Siamo</h2>
-        <p class="card-desc">4 generazioni al vostro servizio dal 1886</p>
-      </div>
-    </div>
-
-    <!-- 06: VALUTAZIONE DEI CLIENTI (RECENSIONI) -->
+    <!-- 05: VALUTAZIONE DEI CLIENTI (RECENSIONI A LARGHEZZA INTERA) -->
     <div class="bento-card card-recensioni" onclick="openModal('modal-recensioni')">
       <div class="card-content">
-        <span class="card-number">06</span>
+        <span class="card-number">05</span>
         <div class="rating-badge">
           <span class="rating-score">4.7</span>
           <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
@@ -828,7 +902,7 @@
 
   </div>
 
-  <!-- MODAL DINAMICO SINGOLO SERVIZIO (FOTO RIDIMENSIONATA E MAI TAGLIATA) -->
+  <!-- MODAL DINAMICO SINGOLO SERVIZIO -->
   <div id="modal-single-service" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
@@ -899,7 +973,7 @@
     </div>
   </div>
 
-  <!-- MODAL: 03 CONSULENZA NUTRIZIONALE (FOTO RIDIMENSIONATA E INTERA) -->
+  <!-- MODAL: 03 CONSULENZA NUTRIZIONALE -->
   <div id="modal-nutrizione" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
@@ -945,25 +1019,7 @@
     </div>
   </div>
 
-  <!-- MODAL: 05 STORIA (CHI SIAMO) -->
-  <div id="modal-storia" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
-    <div class="modal-sheet">
-      <div class="modal-handle"></div>
-      <div class="modal-header">
-        <h2 class="modal-title">Chi Siamo</h2>
-        <button class="close-btn" onclick="closeModal('modal-storia')">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-img-container">
-          <img src="foto%20vintage.jpg" class="modal-img-contained" alt="Farmacia Storica" />
-        </div>
-        <p>Da oltre un secolo al servizio della vostra salute e del vostro benessere. <strong>Quattro generazioni</strong> della famiglia con competenza, passione e professionalità.</p>
-        <p>La farmacia è nel nostro DNA. Dal bisnonno <strong>Michele</strong>, passando per nonna <strong>Rosa</strong> e papà <strong>Arturo</strong>, siamo giunti fino ad oggi per proseguire questa meravigliosa storia insieme a voi.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL: 06 RECENSIONI -->
+  <!-- MODAL: 05 RECENSIONI -->
   <div id="modal-recensioni" class="modal-overlay" onclick="closeModalOnOverlay(event, this)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
