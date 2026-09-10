@@ -364,7 +364,6 @@
       box-shadow: 0 4px 14px rgba(0, 77, 38, 0.04);
     }
     
-    /* Box immagine orizzontale pieno da bordo a bordo */
     .service-row-imgbox {
       width: 100%;
       aspect-ratio: 16 / 10;
@@ -381,14 +380,15 @@
       display: block;
     }
 
-    /* Punti focali calibrati per evitare tagli indesiderati */
+    /* PUNTI FOCALI CALIBRATI */
+    .img-nutrizionista { object-position: center 22% !important; } /* abbassata: viso e testa perfetti */
     .img-telemedicina { object-position: center 30% !important; }
     .img-pressione { object-position: center center !important; }
-    .img-nutrizionista { object-position: center top !important; } /* non taglia la testa */
+    .img-tampone { object-position: center center !important; }
     .img-ricette { object-position: center center !important; }
-    .img-glovo { object-position: center top !important; } /* mostra zaino e logo */
-    .img-dermocosmesi { object-position: center center !important; }
-    .img-lobi { object-position: center 25% !important; } /* inquadra bene l'orecchio */
+    .img-glovo { object-position: center 12% !important; } /* calibrata: logo zaino perfettamente centrato */
+    .img-dermocosmesi { object-position: center 78% !important; } /* abbassata: crema e flaconi in primo piano */
+    .img-lobi { object-position: center 25% !important; } /* centrata sull'orecchio */
 
     .service-row-title {
       font-family: 'Playfair Display', serif;
@@ -630,7 +630,7 @@
         border-radius: 14px;
       }
 
-      /* Card servizi su mobile: riquadro orizzontale a tutta larghezza con ratio 16:9 */
+      /* Card servizi su mobile */
       .service-row-item {
         grid-template-columns: 1fr;
         gap: 14px;
@@ -758,7 +758,21 @@
 
     <div class="services-list-vertical">
 
-      <!-- 1. Telemedicina -->
+      <!-- 1. Consulenza Nutrizionale -->
+      <div class="service-row-item">
+        <div class="service-row-imgbox">
+          <img src="nutrizionista.png" alt="Consulenza Nutrizionale" class="img-nutrizionista" />
+        </div>
+        <div class="service-row-content">
+          <h3 class="service-row-title">Consulenza Nutrizionale</h3>
+          <p class="service-row-desc">Consulenza nutrizionale in farmacia: verrai seguito dalla <strong>Dietista Dott.ssa Lucia Di Lorenzo</strong> con studio approfondito delle abitudini alimentari e analisi corporea per un percorso su misura.</p>
+          <a href="tel:330671632" class="service-inline-btn btn-phone-pill">
+            <i class="fa-solid fa-phone"></i> Chiama la Dott.ssa: 330 671632
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Telemedicina -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
           <img src="telemedicina.png" alt="Telemedicina" class="img-telemedicina" />
@@ -772,38 +786,38 @@
         </div>
       </div>
 
-      <!-- 2. Autoanalisi -->
+      <!-- 3. Misurazione Pressione (senza analisi sangue) -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
-          <img src="pressione.png" alt="Pressione e Analisi" class="img-pressione" />
+          <img src="pressione.png" alt="Misurazione Pressione" class="img-pressione" />
         </div>
         <div class="service-row-content">
-          <h3 class="service-row-title">Misurazione Pressione &amp; Analisi Sangue</h3>
-          <p class="service-row-desc">Misurazione immediata di Pressione arteriosa, Colesterolo, Glicemia e Trigliceridi con valori certi in pochi minuti e consulenza dedicata.</p>
+          <h3 class="service-row-title">Misurazione Pressione</h3>
+          <p class="service-row-desc">Controllo rapido e preciso della pressione arteriosa con apparecchiature professionali calibrate e consulenza dedicata per il monitoraggio cardiovascolare.</p>
           <a href="tel:08563780" class="service-inline-btn btn-phone-pill">
             <i class="fa-solid fa-phone"></i> Chiama per Info
           </a>
         </div>
       </div>
 
-      <!-- 3. Nutrizionista -->
+      <!-- 4. Tampone Covid-19 e Streptococco (NUOVO) -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
-          <img src="nutrizionista.png" alt="Nutrizionista" class="img-nutrizionista" />
+          <img src="tampone.png" alt="Tampone Covid-19 e Streptococco" class="img-tampone" />
         </div>
         <div class="service-row-content">
-          <h3 class="service-row-title">Consulenza Nutrizionale</h3>
-          <p class="service-row-desc">Consulenza nutrizionale in farmacia: verrai seguito dalla <strong>Dietista Dott.ssa Lucia Di Lorenzo</strong> con studio approfondito delle abitudini alimentari e analisi corporea per un percorso su misura.</p>
-          <a href="tel:330671632" class="service-inline-btn btn-phone-pill">
-            <i class="fa-solid fa-phone"></i> Chiama la Dott.ssa: 330 671632
+          <h3 class="service-row-title">Tampone Covid-19 e Streptococco</h3>
+          <p class="service-row-desc">Esecuzione in farmacia di tamponi rapidi per Covid-19 e Streptococco con esito immediato in pochi minuti, massima accuratezza e rilascio attestazione.</p>
+          <a href="https://wa.me/393518267441?text=Salve,%20vorrei%20prenotare%20un%20Tampone" target="_blank" class="service-inline-btn btn-wa-pill">
+            <i class="fa-brands fa-whatsapp"></i> Prenota Tampone su WhatsApp
           </a>
         </div>
       </div>
 
-      <!-- 4. Prenotazione Ricette WhatsApp -->
+      <!-- 5. Prenotazione Ricette WhatsApp -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
-          <img src="prenotazione%20ricette.png" alt="Prenotazione Ricette" class="img-ricette" />
+          <img src="prenotazione%20ricette.png" alt="Prenotazione Ricette WhatsApp" class="img-ricette" />
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Prenotazione Ricette WhatsApp</h3>
@@ -814,10 +828,10 @@
         </div>
       </div>
 
-      <!-- 5. Glovo -->
+      <!-- 6. Consegna a Domicilio Glovo -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
-          <img src="glovo.png" alt="Glovo" class="img-glovo" />
+          <img src="glovo.png" alt="Consegna Glovo" class="img-glovo" />
         </div>
         <div class="service-row-content">
           <h3 class="service-row-title">Consegna a Domicilio Glovo</h3>
@@ -828,7 +842,7 @@
         </div>
       </div>
 
-      <!-- 6. Dermocosmesi -->
+      <!-- 7. Dermocosmesi -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
           <img src="dermocosmesi.png" alt="Dermocosmesi" class="img-dermocosmesi" />
@@ -842,7 +856,7 @@
         </div>
       </div>
 
-      <!-- 7. Foratura Lobi -->
+      <!-- 8. Foratura Lobi -->
       <div class="service-row-item">
         <div class="service-row-imgbox">
           <img src="foratura%20lobi.png" alt="Foratura Lobi" class="img-lobi" />
@@ -859,6 +873,7 @@
     </div>
   </section>
 
+  <!-- SEZIONE CONTATTI -->
   <section class="open-section" id="sezione-contatti">
     <div class="section-headline" style="text-align: left; margin-bottom: 12px;">
       <div class="section-headline-subtitle">Comunicazione Diretta</div>
@@ -884,6 +899,7 @@
     </div>
   </section>
 
+  <!-- SEZIONE ORARI -->
   <section class="open-section" id="sezione-orari">
     <div class="section-headline" style="text-align: left; margin-bottom: 12px;">
       <div class="section-headline-subtitle">Disponibilità &amp; Turni</div>
@@ -912,6 +928,7 @@
     </table>
   </section>
 
+  <!-- SEZIONE MAPPA & RECENSIONI -->
   <section class="location-reviews-row" id="sezione-mappa">
     <div class="open-subblock">
       <h3 class="open-subblock-title">Dove Siamo</h3>
